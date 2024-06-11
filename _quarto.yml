@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+    navbar:
+      title: "Nipun"
+      right:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - Publications.qmd
+      - Posts.qmd
+      - Tutorial.qmd
+      
+      tools: 
+      - icon: github
+        text: Github
+        href: https://github.com/Nipun-Shrestha
+twitter-card: true
+open-graph: true
+google-analytics: 
+  tracking-id: "G-EY5KG3VY2K"
+  cookie-consent: true
+  anonymize-ip: true
+
+format:
+  html:
+    theme: 
+      cosmo
+      styles.scss
+      mainfont:Nunito Sans
+    toc: true
+editor: visual

@@ -1,0 +1,46 @@
+---
+title: "Dr Nipun Shrestha"
+image: Image.jpg
+about: 
+  template: trestles
+  image-shape: round
+  image-width: 20em
+  links: 
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/nipun_shrestha
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/nipun-shrestha-a4903887/
+    - icon: envelope
+      text: Email
+      href: mailto:drnipunsth@gmail.com
+---
+
+# Experience
+
+-   Post Doctoral Research Associate \| University of Sydney
+
+    NHMRC Clinical Trials Center \| 05/2022 - 01/2024
+
+-   Post Doctoral Research Associate \| University of Liverpool
+
+    Department of Primary Care and Mental Health \| 07/2021 - 03/2022
+
+-   Research Associate \| Victoria University
+
+    Active Living and Public Health \| 09/2020 - 02/2021
+
+# Education
+
+-   Victoria University \| Melbourne, Australia
+
+    PhD in Epidemiology \| 2016 - 2020
+
+-   University of Eastern Finland \| Kuopio, Finland
+
+    Master in health Sciences \| 2012 - 2014
+
+-   Kathmandu University \| Kathmandu, Nepal
+
+    Bachelor of Medicine Bachelor of Surgery \| 2002 - 2009

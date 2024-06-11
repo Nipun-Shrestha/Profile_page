@@ -1,0 +1,24 @@
+---
+title: "Career Summary"
+about: 
+  template: jolla
+csl: apa-single-spaced.csl
+---
+
+I am a research-focused epidemiologist and a trained medical doctor (Nepal) with exceptional track record. My major areas of research interests are advanced epidemiological methods and next generation evidence synthesis approaches, such as prospective meta-analysis, and individual participant data meta-analysis. I am highly proficient in management of large observational/trial datasets and advanced systematic review methodologies. I have authored 18 systematic reviews, some of which have informed the development of international guidelines.
+
+::: {layout-ncol="2" style="color: gray"}
+::: {.column width="50%"}
+Author of two journal articles that are ranked among the top 5% globally according to media attention they received (Altmetric scores: 3564 and 1018)
+
+-   Workplace intervention for reducing sitting at work. Available from <https://bit.ly/3agBUNn>
+
+-   Any amount of running linked to significantly lower risk of death. Available from <http://bit.ly/3nnR4nD>
+:::
+
+::: {.column width="50%"}
+Designed a booklet on strategies for increasing physical activity and reducing sedentary behaviour for INTUE – International Network of Time-Use Epidemiologists
+
+[![](Figure%204_001.png){fig-align="center" width="250"}](https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf)
+:::
+:::

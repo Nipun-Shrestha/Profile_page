@@ -1,0 +1,21 @@
+---
+title: "ESMO Conference"
+bibliography: references.bib
+lightbox: true
+---
+
+# ESMO Conference October 2023 main findings
+
+[@kazmi2023]
+
+![Fig 1: MTT vs. SACT](Figure%201.jpg)
+
+![Figure 2: MTT +SACT vs SACT](Figure%202.jpg)
+
+# Photos from Cochrane colloquium London 2023
+
+::: {layout-ncol="2" style="color: gray"}
+![](Image%202.jpg)
+
+![](Image%203.jpg)
+:::
