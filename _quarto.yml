@@ -8,6 +8,7 @@ website:
       right:
       - href: index.qmd
         text: Home
+      - about.qmd
       - Publications.qmd
       - Posts.qmd
       - Tutorial.qmd
