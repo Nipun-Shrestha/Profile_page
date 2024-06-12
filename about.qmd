@@ -1,6 +1,6 @@
 ---
 title: "about"
-subtitle: "a bit more about"
+subtitle: "a bit more about me"
 title-block-banner: true
 csl: apa-single-spaced.csl
 ---
