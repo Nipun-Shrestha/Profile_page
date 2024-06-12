@@ -11,6 +11,17 @@ website:
       - Publications.qmd
       - Posts.qmd
       - Tutorial.qmd
+      - text: get in touch!
+        menu:
+          - icon: twitter
+            text: Twitter
+            href: https://twitter.com/nipun_shrestha
+          - icon: linkedin
+            text: Linkedin
+            href: https://www.linkedin.com/in/nipun-shrestha-a4903887/
+          - icon: envelope
+            text: Email
+            href: mailto:drnipunsth@gmail.com
       tools: 
       - icon: github
         text: Github

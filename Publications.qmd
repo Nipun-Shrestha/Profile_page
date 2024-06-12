@@ -3,7 +3,6 @@ title: "Publications"
 author: 
   - name: Dr Nipun Shrestha
     url: https://ctc.usyd.edu.au/about-us/our-people/academics-research-fellows/dr-nipun-shrestha/
-    email: drnipunsth@gmail.com
     orcid: 0000-0003-3542-8130
     degrees: 
       - MBBS

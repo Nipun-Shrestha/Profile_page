@@ -9,4 +9,4 @@ categories:
 
 Designed a booklet for [INTUE](https://www.intue.org/) – International Network of Time-Use Epidemiologists. Click on the image.
 
-[![](Figure%204_001.png){width="500"}](https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf)
+[![](Figure%204_001.png){width="400"}](https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf)
