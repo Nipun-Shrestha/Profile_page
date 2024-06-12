@@ -1,24 +1,34 @@
 ---
-title: "Career Summary"
-about: 
-  template: jolla
+title: "about"
+subtitle: "a bit more about"
+title-block-banner: true
 csl: apa-single-spaced.csl
 ---
 
-I am a research-focused epidemiologist and a trained medical doctor (Nepal) with exceptional track record. My major areas of research interests are advanced epidemiological methods and next generation evidence synthesis approaches, such as prospective meta-analysis, and individual participant data meta-analysis. I am highly proficient in management of large observational/trial datasets and advanced systematic review methodologies. I have authored 18 systematic reviews, some of which have informed the development of international guidelines.
+## {{< fa chalkboard-teacher title="A teacher at a chalkboard" >}} Career summary
 
-::: {layout-ncol="2" style="color: gray"}
-::: {.column width="50%"}
-Author of two journal articles that are ranked among the top 5% globally according to media attention they received (Altmetric scores: 3564 and 1018)
+I am a research-focused epidemiologist and a trained medical doctor (Nepal) with exceptional track record. I am listed among the top 2% of researchers globally since 2022 in all fields of science, according to the Science-Wide Author Database of Standardized Citation Indicators, published annually by Elsevier. My major areas of research interests are advanced epidemiological methods and next generation evidence synthesis approaches, such as prospective meta-analysis, and individual participant data meta-analysis. I am highly proficient in management of large observational/trial datasets and advanced systematic review methodologies. I have authored 18 systematic reviews, some of which have informed the development of international guidelines.
 
--   Workplace intervention for reducing sitting at work. Available from <https://bit.ly/3agBUNn>
+As a post-doctoral research associate at University of Sydney, I was a core team member in individual participant data meta- analyses projects such as the iCOMP collaboration, which examines cord management in preterm infants, and the TOPCHILD collaboration which focuses on early childhood obesity prevention.Similarly as a postdoctoral research associate at University of Liverpool, I worked on a project for designing a community based mental health intervention for older adults in Colombia. In my PhD project, I designed a physical activity intervention for mental health professionals in Victoria and investigated whether such an intervention led to change in their attitudes and practices of recommending physical activity to their clients in routine clinical practice. During my PhD, I also worked on several projects that investigated inequities in burden of non-communicable diseases in Nepal and access to health care services for non-communicable diseases in Nepal.
 
--   Any amount of running linked to significantly lower risk of death. Available from <http://bit.ly/3nnR4nD>
+::: column-margin
+```{r}
+#| echo: false
+#| fig-alt: "At graduation ceremony"
+knitr::include_graphics("graduation.jpg")
+```
+
+::: {.center-text .extra-small-text .dark-gray-text .topbr}
+PhD graduation ceremony Victoria University.
+:::
 :::
 
-::: {.column width="50%"}
-Designed a booklet on strategies for increasing physical activity and reducing sedentary behaviour for INTUE – International Network of Time-Use Epidemiologists
+## {{<fa book>}} Academic Engagement
 
-[![](Figure%204_001.png){fig-align="center" width="250"}](https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf)
-:::
-:::
+-   Supervised a Master of Public Health Student from University of Southern Denmark (thesis titled: Prevalence of diabetes mellitus among tuberculosis patients and its impact on treatment outcome in South Asian Region: a systematic review and meta-analysis)
+
+-   Supervised a Master of Public Health Student from University of Sydney (thesis titled: Scalability of TOPCHILD trials)
+
+-   Initiated and led several internal workshops on systematic reviews at Victoria University and University of Sydney
+
+-   Academic editor: PLOS One, Frontiers in Sports and Active Living

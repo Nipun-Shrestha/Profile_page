@@ -8,12 +8,9 @@ website:
       right:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - Publications.qmd
       - Posts.qmd
       - Tutorial.qmd
-      
       tools: 
       - icon: github
         text: Github

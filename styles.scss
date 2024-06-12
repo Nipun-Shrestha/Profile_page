@@ -4,7 +4,41 @@
 
 // Colors
 $light-green: #D1D9CE;
+$medium-green: #98A08D;
+$dark-green: #757B6D;
 $cream: #FDFBF7;
-$gray: #64605f;
+$dark-gray: #5A5856;
+$medium-gray: #64605f;
+$purple: #9158A2; 
+$orange: #ad7237;
 
 $navbar-bg: $gray; // navbar
+
+// Base document colors
+$navbar-bg: $cream;
+$navbar-fg: $medium-green; 
+$navbar-hl: $purple; 
+$body-bg: $light-green;
+
+/* CLASS SELECTORS (copied from inspecting site -- Quarto defined?) */
+
+// resize logo (top left corner) see https://github.com/robertmitchellv/robertmitchellv.github.io/blob/main/custom-dark.scss
+.navbar-brand img { 
+  max-height: 50px;
+  width: auto;
+}
+
+// headshot shape
+.rounded { 
+    border-radius: 50px 20px 50px 20px !important;
+}
+
+// button text size (landing page)
+.about-link-text { 
+  font-size: 18px;
+}
+
+// button icon size (landing page)
+.bi { 
+  font-size: 18px;
+}
