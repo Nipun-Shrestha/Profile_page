@@ -12,6 +12,10 @@ author:
       - PhD
 google-scholar: true
 lightbox: true
+engine: knitr
+filters:
+  - webr
+  - shinylive
 ---
 
 # Meta-analysis in R
@@ -21,12 +25,6 @@ Cord clamping in pre-term babies data from the recently published individual par
 ::: callout-note
 Note that only summary level data is used for this tutorial.
 :::
-
-## Loading packages & reading data
-
-First, we need to:\
-1. load **packages**\
-2. load **data**
 
 ::: panel-tabset
 #### Loading Packages
@@ -41,7 +39,7 @@ library (readxl)
 
 #### Loading Data
 
-Loading data {this data is located in github repository. <https://github.com/Nipun-Shrestha/Profile_page/blob/main/Icomp.xlsx%7D>
+Loading data {this data is located in github repository. https://github.com/Nipun-Shrestha/Profile_page/blob/main/Icomp.xlsx}
 
 ```{r data, warning = FALSE, message = FALSE}
 Icomp <- read_excel("Icomp.xlsx")
