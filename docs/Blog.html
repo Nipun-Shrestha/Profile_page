@@ -120,10 +120,6 @@ div.csl-indent {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./Publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
@@ -184,13 +180,13 @@ div.csl-indent {
 <p><span class="citation" data-cites="kazmi2023">(<a href="#ref-kazmi2023" role="doc-biblioref">Kazmi et al. 2023</a>)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="Figure 1.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Fig 1: MTT vs.&nbsp;SACT"><img src="Figure 1.jpg" class="img-fluid figure-img" alt="Fig 1: MTT vs.&nbsp;SACT"></a></p>
+<p><a href="Figure 1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Fig 1: MTT vs.&nbsp;SACT"><img src="Figure 1.jpg" class="img-fluid figure-img" alt="Fig 1: MTT vs.&nbsp;SACT"></a></p>
 <figcaption>Fig 1: MTT vs.&nbsp;SACT</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="Figure 2.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Figure 2: MTT +SACT vs SACT"><img src="Figure 2.jpg" class="img-fluid figure-img" alt="Figure 2: MTT +SACT vs SACT"></a></p>
+<p><a href="Figure 2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Figure 2: MTT +SACT vs SACT"><img src="Figure 2.jpg" class="img-fluid figure-img" alt="Figure 2: MTT +SACT vs SACT"></a></p>
 <figcaption>Figure 2: MTT +SACT vs SACT</figcaption>
 </figure>
 </div>
@@ -305,7 +301,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/Nipun-Shrestha\.github\.io\/Profile\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -634,7 +630,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
