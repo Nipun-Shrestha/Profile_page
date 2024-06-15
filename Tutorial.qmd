@@ -16,6 +16,13 @@ engine: knitr
 filters:
   - webr
   - shinylive
+  - social-share
+share:
+  permalink: https://nipun-shrestha.github.io/Profile_page/Tutorial.html
+  description: "awesome page"
+  twitter: true
+  facebook: true
+  linkedin: true
 ---
 
 # Meta-analysis in R
