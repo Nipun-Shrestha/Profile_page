@@ -14,8 +14,6 @@ google-scholar: true
 lightbox: true
 engine: knitr
 filters:
-  - webr
-  - shinylive
   - social-share
 share:
   permalink: https://nipun-shrestha.github.io/Profile_page/Tutorial.html
@@ -187,7 +185,7 @@ text(-16, -1, pos=4, cex=0.8, bquote(paste("Test for Subgroup Differences: ",
 
 # Age-standardized DALYs rate of cardiovascular disease per 100,000 population from 2001 to 2021 in South Asia by country’s GDP/capita (US\$)
 
-The GDP per capita (inflation-adjusted) are plotted in x-axis and corresponding values of gender difference in age-standardized cardiovascular disease (CVD) rates (male rates minus female rates) are plotted in y-axis. The size of bubble corresponds to the size of the population of the country. The definition of cardiovascular disease includes all eleven CVD types and is described [elsewhere](https://www.healthdata.org/research-analysis/gbd "GBD"). The data on cardiovascular disease rates were obtained from the [Global Burden of Disease](https://www.healthdata.org/research-analysis/gbd "GBD") and GDP per capita from [World Bank.](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&locations=8S&start=2001)
+The GDP per capita (inflation-adjusted) are plotted in x-axis and corresponding values of age-standardized cardiovascular disease (CVD) rates for A) Females and B) Males are plotted in y-axis. The size of bubble corresponds to the size of the population of the country. The definition of cardiovascular disease includes all eleven CVD types and is described [elsewhere](https://www.healthdata.org/research-analysis/gbd "GBD"). The data on cardiovascular disease rates were obtained from the [Global Burden of Disease](https://www.healthdata.org/research-analysis/gbd "GBD") and GDP per capita from [World Bank.](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&locations=8S&start=2001)
 
 ```{r dpi=400}
 library(tidyverse)
