@@ -225,6 +225,12 @@ div.csl-indent {
   <li><a href="#helper-function" id="toc-helper-function" class="nav-link" data-scroll-target="#helper-function">Helper function</a></li>
   <li><a href="#forest-plot" id="toc-forest-plot" class="nav-link" data-scroll-target="#forest-plot">Forest plot</a></li>
   </ul></li>
+  <li><a href="#forest-plot-with-subgroups" id="toc-forest-plot-with-subgroups" class="nav-link" data-scroll-target="#forest-plot-with-subgroups">Forest plot with subgroups</a>
+  <ul class="collapse">
+  <li><a href="#random-effects-model-using-log-hazard-ratios-and-variances-as-input" id="toc-random-effects-model-using-log-hazard-ratios-and-variances-as-input" class="nav-link" data-scroll-target="#random-effects-model-using-log-hazard-ratios-and-variances-as-input">Random-effects model (using log hazard ratios and variances as input)</a></li>
+  <li><a href="#helper-function-1" id="toc-helper-function-1" class="nav-link" data-scroll-target="#helper-function-1">Helper function</a></li>
+  <li><a href="#forest-plot-1" id="toc-forest-plot-1" class="nav-link" data-scroll-target="#forest-plot-1">Forest plot</a></li>
+  </ul></li>
   <li><a href="#age-standardized-dalys-rate-of-cardiovascular-disease-per-100000-population-from-2001-to-2021-in-south-asia-by-countrys-gdpcapita-us" id="toc-age-standardized-dalys-rate-of-cardiovascular-disease-per-100000-population-from-2001-to-2021-in-south-asia-by-countrys-gdpcapita-us" class="nav-link" data-scroll-target="#age-standardized-dalys-rate-of-cardiovascular-disease-per-100000-population-from-2001-to-2021-in-south-asia-by-countrys-gdpcapita-us">Age-standardized DALYs rate of cardiovascular disease per 100,000 population from 2001 to 2021 in South Asia by country’s GDP/capita (US$)</a></li>
   </ul>
 </nav>
@@ -363,49 +369,154 @@ Note
 </div>
 </section>
 </section>
+<section id="forest-plot-with-subgroups" class="level1">
+<h1>Forest plot with subgroups</h1>
+<p>Data from Cochrane review: Next-generation sequencing for guiding matched targeted therapies in people with relapsed or metastatic cancer<span class="citation" data-cites="kazmi2023">(<a href="#ref-kazmi2023" role="doc-biblioref">Kazmi et al. 2023</a>)</span> is used for this task.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Loading Packages</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Loading Data</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metafor)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Loading data</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df<span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"~/GitHub/Profile/Subgroup.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<section id="random-effects-model-using-log-hazard-ratios-and-variances-as-input" class="level2">
+<h2 class="anchored" data-anchor-id="random-effects-model-using-log-hazard-ratios-and-variances-as-input">Random-effects model (using log hazard ratios and variances as input)</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">conv.wald</span>(<span class="at">out=</span>hr, <span class="at">ci.lb=</span>ci.lb, <span class="at">ci.ub=</span>ci.ub,<span class="at">n=</span>ntot, <span class="at">data=</span>df,<span class="at">slab=</span>df<span class="sc">$</span>Study, <span class="at">transf=</span>log)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data=</span>dat, <span class="at">slab=</span>df<span class="sc">$</span>Study)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="helper-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="helper-function-1">Helper function</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mlabfun <span class="ot">&lt;-</span> <span class="cf">function</span>(text, res4) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">list</span>(<span class="fu">bquote</span>(<span class="fu">paste</span>(.(text),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">" (Q = "</span>, .(<span class="fu">formatC</span>(res4<span class="sc">$</span>QE, <span class="at">digits=</span><span class="dv">2</span>, <span class="at">format=</span><span class="st">"f"</span>)),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">", df = "</span>, .(res4<span class="sc">$</span>k <span class="sc">-</span> res4<span class="sc">$</span>p),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">", p "</span>, .(metafor<span class="sc">:::</span><span class="fu">.pval</span>(res4<span class="sc">$</span>QEp, <span class="at">digits=</span><span class="dv">2</span>, <span class="at">showeq=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">" "</span>)), <span class="st">"; "</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      I<span class="sc">^</span><span class="dv">2</span>, <span class="st">" = "</span>, .(<span class="fu">formatC</span>(res4<span class="sc">$</span>I2, <span class="at">digits=</span><span class="dv">1</span>, <span class="at">format=</span><span class="st">"f"</span>)), <span class="st">"%, "</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      tau<span class="sc">^</span><span class="dv">2</span>, <span class="st">" = "</span>, .(<span class="fu">formatC</span>(res4<span class="sc">$</span>tau2, <span class="at">digits=</span><span class="dv">2</span>, <span class="at">format=</span><span class="st">"f"</span>)), <span class="st">")"</span>)))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="forest-plot-1" class="level2">
+<h2 class="anchored" data-anchor-id="forest-plot-1">Forest plot</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sav <span class="ot">&lt;-</span><span class="fu">forest</span>(res, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">16</span>, <span class="fl">4.6</span>), <span class="at">at=</span><span class="fu">log</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>)), <span class="at">atransf=</span>exp,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">cex=</span><span class="fl">0.75</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">12</span>), <span class="at">order=</span>dat<span class="sc">$</span>alloc, <span class="at">rows=</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">xlab =</span><span class="st">"Hazard ratio"</span>, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">addfit=</span><span class="cn">FALSE</span>, <span class="at">ilab=</span><span class="fu">cbind</span>(df<span class="sc">$</span>int, df<span class="sc">$</span>cont), <span class="at">ilab.xpos=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">5.8</span>,<span class="sc">-</span><span class="fl">3.8</span>, <span class="at">length =</span> <span class="dv">2</span>), </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">psize=</span><span class="dv">1</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="do">### set font expansion factor (as in forest() above) and use a bold font</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">cex=</span><span class="fl">0.75</span>, <span class="at">font=</span><span class="dv">2</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="do">### add text for the subgroups</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="dv">16</span>, <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">9</span>), <span class="at">pos=</span><span class="dv">4</span>, <span class="fu">c</span>(<span class="st">"Phase 2"</span>, <span class="st">"Phase 3"</span>))</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="do">### set par back to the original settings</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(op)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">### fit random-effects model in the three subgroups</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>res1 <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">subset=</span>(phase<span class="sc">==</span><span class="st">"3"</span>), <span class="at">data=</span>dat)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>res3 <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data=</span>dat)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>res2 <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">subset=</span>(phase<span class="sc">==</span><span class="st">"2"</span>), <span class="at">data=</span>dat)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">### add summary polygons for the three subgroups</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="fu">addpoly</span>(res3, <span class="at">row=</span> <span class="dv">0</span>,  <span class="at">mlab=</span><span class="fu">mlabfun</span>(<span class="st">"RE Model for Overall"</span>, res2))</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="fu">addpoly</span>(res2, <span class="at">row=</span> <span class="dv">1</span>, <span class="at">mlab=</span><span class="fu">mlabfun</span>(<span class="st">"RE Model for Subgroup"</span>, res3))</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">addpoly</span>(res1, <span class="at">row=</span> <span class="dv">6</span>, <span class="at">mlab=</span><span class="fu">mlabfun</span>(<span class="st">"RE Model for Subgroup"</span>, res1))</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="dv">16</span>, <span class="dv">12</span>, <span class="at">pos=</span><span class="dv">4</span>, <span class="at">cex=</span><span class="fl">1.3</span>, <span class="fu">c</span>(<span class="st">"Subgroup analysis: Progression free Survival for Prostate Cancer based on phase of trial"</span>), <span class="at">font =</span> <span class="dv">4</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">2</span>, <span class="fl">10.8</span>, <span class="at">pos=</span><span class="dv">4</span>, <span class="at">cex=</span><span class="fl">0.8</span>, <span class="fu">c</span>(<span class="st">"Hazard ratio [95% CI]"</span>), <span class="at">font =</span> <span class="dv">4</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(sav<span class="sc">$</span>ilab.xpos, <span class="dv">11</span>, <span class="at">pos=</span><span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"Intervention (n)"</span>,<span class="st">"Control (n)"</span>), <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">font =</span><span class="dv">4</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">c</span>(<span class="fu">log</span>(<span class="fl">0.05</span>),<span class="fu">log</span>(<span class="dv">4</span>)), <span class="sc">-</span><span class="fl">1.5</span>, <span class="at">pos=</span><span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"Favours Intervention"</span>, <span class="st">"Favours Control"</span>), <span class="at">cex=</span><span class="fl">0.8</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">14.8</span>,                     <span class="fl">10.8</span>, <span class="st">"Study"</span>, <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">pos =</span> <span class="dv">2</span>, <span class="at">font =</span><span class="dv">4</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="do">### add text for the test of subgroup differences</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="dv">16</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="at">pos=</span><span class="dv">4</span>, <span class="at">cex=</span><span class="fl">0.8</span>, <span class="fu">bquote</span>(<span class="fu">paste</span>(<span class="st">"Test for Subgroup Differences: "</span>,</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>     Q[M], <span class="st">" = "</span>, .(<span class="fu">formatC</span>(res<span class="sc">$</span>QM, <span class="at">digits=</span><span class="dv">2</span>, <span class="at">format=</span><span class="st">"f"</span>)), <span class="st">", df = "</span>, .(res<span class="sc">$</span>p <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>     <span class="st">", p = "</span>, .(<span class="fu">formatC</span>(res<span class="sc">$</span>QMp, <span class="at">digits=</span><span class="dv">2</span>, <span class="at">format=</span><span class="st">"f"</span>)))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="Tutorial_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Tutorial_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="4800"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="age-standardized-dalys-rate-of-cardiovascular-disease-per-100000-population-from-2001-to-2021-in-south-asia-by-countrys-gdpcapita-us" class="level1">
 <h1>Age-standardized DALYs rate of cardiovascular disease per 100,000 population from 2001 to 2021 in South Asia by country’s GDP/capita (US$)</h1>
 <p>The GDP per capita (inflation-adjusted)&nbsp;are&nbsp;plotted in x-axis and corresponding values of gender difference in age-standardized cardiovascular disease (CVD) rates (male rates minus female rates) are plotted in y-axis. The size&nbsp;of bubble&nbsp;corresponds to the size&nbsp;of the population&nbsp;of the country. The definition of cardiovascular disease includes all eleven CVD types and is described <a href="https://www.healthdata.org/research-analysis/gbd" title="GBD">elsewhere</a>. The data on cardiovascular disease rates were obtained from the <a href="https://www.healthdata.org/research-analysis/gbd" title="GBD">Global Burden of Disease</a> and GDP per capita from <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&amp;locations=8S&amp;start=2001">World Bank.</a></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"gifski"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"~/GitHub/Profile/GBD.Rdata"</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> dat1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(measure <span class="sc">==</span><span class="st">"DALYs (Disability-Adjusted Life Years)"</span>) </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>dat1,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y=</span>val, <span class="at">size =</span> Population, <span class="at">colour =</span> Country)</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">show.legend =</span> <span class="cn">TRUE</span>, <span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Income per person (GDP/capita PPPS inflation-adjusted"</span>, <span class="at">y =</span> <span class="st">"Age-standardized DALYs rate per 100,000"</span>) <span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Year: {frame_time}"</span>) <span class="sc">+</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_mark</span>(<span class="at">alpha =</span> <span class="dv">2</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"gifski"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"~/GitHub/Profile/GBD.Rdata"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>dat1 <span class="ot">&lt;-</span> dat1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(measure <span class="sc">==</span><span class="st">"DALYs (Disability-Adjusted Life Years)"</span>) </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>dat1,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y=</span>val, <span class="at">size =</span> Population, <span class="at">colour =</span> Country)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">show.legend =</span> <span class="cn">TRUE</span>, <span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Income per person (GDP/capita PPPS inflation-adjusted)"</span>, <span class="at">y =</span> <span class="st">"Age-standardized DALYs rate per 100,000"</span>) <span class="sc">+</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Year: {frame_time}"</span>) <span class="sc">+</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_mark</span>(<span class="at">alpha =</span> <span class="dv">2</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="Tutorial_files/figure-html/unnamed-chunk-2-1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Tutorial_files/figure-html/unnamed-chunk-2-1.gif" class="img-fluid figure-img"></a></p>
+<p><a href="Tutorial_files/figure-html/unnamed-chunk-3-1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="Tutorial_files/figure-html/unnamed-chunk-3-1.gif" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#animate(R, height=400, width=800, renderer=gifski_renderer())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#animate(R, height=400, width=800, renderer=gifski_renderer())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -414,6 +525,9 @@ Note
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-kazmi2023" class="csl-entry" role="listitem">
+Kazmi, F., N. Shrestha, T. Foord, T. F. Liu, P. Heesen, S. Booth, D. Dodwell, Y. Kheng Wei, S. Lord, and S. Blagden. 2023. <span>“Are Targeted Therapies Effective in the Relapsed or Metastatic Cancer Setting? A Cochrane Meta-Analysis.”</span> <em>ESMO Open</em> 8 (1): 101649. <a href="https://doi.org/10.1016/j.esmoop.2023.101649">https://doi.org/10.1016/j.esmoop.2023.101649</a>.
+</div>
 <div id="ref-seidler2023" class="csl-entry" role="listitem">
 Seidler, Anna Lene, Mason Aberoumand, Kylie E Hunter, Angie Barba, Sol Libesman, Jonathan G Williams, Nipun Shrestha, et al. 2023. <span>“Deferred Cord Clamping, Cord Milking, and Immediate Cord Clamping at Preterm Birth: A Systematic Review and Individual Participant Data Meta-Analysis.”</span> <em>The Lancet</em> 402 (10418): 2209–22. <a href="https://doi.org/10.1016/s0140-6736(23)02468-6">https://doi.org/10.1016/s0140-6736(23)02468-6</a>.
 </div>
@@ -828,7 +942,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
