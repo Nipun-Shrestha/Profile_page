@@ -36,7 +36,7 @@ website:
         <span class="container"><strong>Made with [Posit Quarto](https://quarto.org/){target="_blank"}</strong></span>
       right: |
         <span class="container"><strong>[Github Repo](https://github.com/Nipun-Shrestha/Profile_page){target="_blank"}</strong></span>
-      background: "#3D85C6"
+      background: "#306A9E"
 twitter-card: true
 open-graph: true
 
