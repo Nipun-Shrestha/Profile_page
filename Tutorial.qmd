@@ -1,6 +1,15 @@
 ---
 title: "Tutorial"
-code-fold: true
+#format:
+ # html:
+ #   grid: 
+  #    body-width: 2000px
+   #   sidebar-width: 200px
+    #  margin-width: 200px
+code-fold: show
+code-link: true
+code-tools: true
+highlight-style: github
 bibliography: references.bib
 author: 
   - name: Dr Nipun Shrestha
@@ -13,14 +22,14 @@ author:
 google-scholar: true
 lightbox: true
 engine: knitr
-filters:
-  - social-share
-share:
-  permalink: https://nipun-shrestha.github.io/Profile_page/Tutorial.html
-  description: "awesome page"
-  twitter: true
-  facebook: true
-  linkedin: true
+#filters:
+ # - social-share
+#share:
+ # permalink: https://nipun-shrestha.github.io/Profile_page/Tutorial.html
+  #description: "awesome page"
+  #twitter: true
+  #facebook: true
+  #linkedin: true
 ---
 
 # Meta-analysis in R

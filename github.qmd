@@ -1,0 +1,2 @@
+-   Quarto code to reproduce this portfolio website - [Portfolio git repo](https://github.com/Nipun-Shrestha/Profile_page){target="_blank"}
+-   [Primary github account](https://github.com/Nipun-Shrestha){target="_blank"}

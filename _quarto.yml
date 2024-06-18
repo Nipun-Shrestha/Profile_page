@@ -5,7 +5,7 @@ project:
 website:
     navbar:
       title: "Nipun"
-      right:
+      left:
       - href: index.qmd
         text: Home
       - href: about.qmd
@@ -13,6 +13,7 @@ website:
       - Publications.qmd
       - Posts.qmd
       - Tutorial.qmd
+      right:
       - text: get in touch!
         menu:
           - icon: twitter
@@ -28,6 +29,14 @@ website:
       - icon: github
         text: Github
         href: https://github.com/Nipun-Shrestha
+    page-footer:
+      center: |
+        <span class="container"><strong>[Contact Nipun Shrestha](mailto:drnipunsth@gmail.com){target="_blank"}</strong></span>
+      left: |
+        <span class="container"><strong>Made with [Posit Quarto](https://quarto.org/){target="_blank"}</strong></span>
+      right: |
+        <span class="container"><strong>[Github Repo](https://github.com/Nipun-Shrestha/Profile_page){target="_blank"}</strong></span>
+      background: "#3D85C6"
 twitter-card: true
 open-graph: true
 
