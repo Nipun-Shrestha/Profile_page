@@ -1,0 +1,612 @@
+{
+    "sources": [
+        {
+            "DOI": "10.1016/j.esmoop.2023.101649",
+            "URL": "http://dx.doi.org/10.1016/j.esmoop.2023.101649",
+            "author": [
+                {
+                    "family": "Kazmi",
+                    "given": "F."
+                },
+                {
+                    "family": "Shrestha",
+                    "given": "N."
+                },
+                {
+                    "family": "Foord",
+                    "given": "T."
+                },
+                {
+                    "family": "Liu",
+                    "given": "T. F."
+                },
+                {
+                    "family": "Heesen",
+                    "given": "P."
+                },
+                {
+                    "family": "Booth",
+                    "given": "S."
+                },
+                {
+                    "family": "Dodwell",
+                    "given": "D."
+                },
+                {
+                    "family": "Wei",
+                    "given": "Y. Kheng"
+                },
+                {
+                    "family": "Lord",
+                    "given": "S."
+                },
+                {
+                    "family": "Blagden",
+                    "given": "S."
+                }
+            ],
+            "container-title": "ESMO Open",
+            "id": "kazmi2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "101649",
+            "title": "Are targeted therapies effective in the relapsed or metastatic cancer setting? A Cochrane meta-analysis",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.1016/s0140-6736(23)02468-6",
+            "URL": "http://dx.doi.org/10.1016/S0140-6736(23)02468-6",
+            "author": [
+                {
+                    "family": "Seidler",
+                    "given": "Anna Lene"
+                },
+                {
+                    "family": "Aberoumand",
+                    "given": "Mason"
+                },
+                {
+                    "family": "Hunter",
+                    "given": "Kylie E"
+                },
+                {
+                    "family": "Barba",
+                    "given": "Angie"
+                },
+                {
+                    "family": "Libesman",
+                    "given": "Sol"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Jonathan G"
+                },
+                {
+                    "family": "Shrestha",
+                    "given": "Nipun"
+                },
+                {
+                    "family": "Aagerup",
+                    "given": "Jannik"
+                },
+                {
+                    "family": "Sotiropoulos",
+                    "given": "James X"
+                },
+                {
+                    "family": "Montgomery",
+                    "given": "Alan A"
+                },
+                {
+                    "family": "Gyte",
+                    "given": "Gillian M L"
+                },
+                {
+                    "family": "Duley",
+                    "given": "Lelia"
+                },
+                {
+                    "family": "Askie",
+                    "given": "Lisa M"
+                },
+                {
+                    "family": "Seidler",
+                    "given": "Anna Lene"
+                },
+                {
+                    "family": "Aberoumand",
+                    "given": "Mason"
+                },
+                {
+                    "family": "Hunter",
+                    "given": "Kylie E"
+                },
+                {
+                    "family": "Barba",
+                    "given": "Angie"
+                },
+                {
+                    "family": "Libesman",
+                    "given": "Sol"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Jonathan G"
+                },
+                {
+                    "family": "Shrestha",
+                    "given": "Nipun"
+                },
+                {
+                    "family": "Aagerup",
+                    "given": "Jannik"
+                },
+                {
+                    "family": "Sotiropoulos",
+                    "given": "James X"
+                },
+                {
+                    "family": "Montgomery",
+                    "given": "Alan A"
+                },
+                {
+                    "family": "Gyte",
+                    "given": "Gillian M L"
+                },
+                {
+                    "family": "Garg",
+                    "given": "Aashim"
+                },
+                {
+                    "family": "Kumar",
+                    "given": "Aditi"
+                },
+                {
+                    "family": "Tan",
+                    "given": "Aidan C"
+                },
+                {
+                    "family": "Kugelman",
+                    "given": "Amir"
+                },
+                {
+                    "family": "Webster",
+                    "given": "Angela C"
+                },
+                {
+                    "family": "George",
+                    "given": "Anu A"
+                },
+                {
+                    "family": "Thukral",
+                    "given": "Anu"
+                },
+                {
+                    "family": "Katheria",
+                    "given": "Anup C"
+                },
+                {
+                    "dropping-particle": "te",
+                    "family": "Pas",
+                    "given": "Arjan B"
+                },
+                {
+                    "family": "KC",
+                    "given": "Ashish"
+                },
+                {
+                    "family": "Urlesberger",
+                    "given": "Berndt"
+                },
+                {
+                    "family": "Schwaberger",
+                    "given": "Bernhard"
+                },
+                {
+                    "family": "Backes",
+                    "given": "Carl H"
+                },
+                {
+                    "family": "De Paco Matallana",
+                    "given": "Catalina"
+                },
+                {
+                    "family": "Tanprasertkul",
+                    "given": "Chamnan"
+                },
+                {
+                    "family": "Ruangkit",
+                    "given": "Chayatat"
+                },
+                {
+                    "family": "Chawla",
+                    "given": "Deepak"
+                },
+                {
+                    "family": "Blank",
+                    "given": "Douglas A"
+                },
+                {
+                    "family": "Okulu",
+                    "given": "Emel"
+                },
+                {
+                    "family": "Dempsey",
+                    "given": "Eugene M"
+                },
+                {
+                    "family": "Ram Mohan",
+                    "given": "Govindu"
+                },
+                {
+                    "family": "Polglase",
+                    "given": "Graeme R"
+                },
+                {
+                    "family": "Carroli",
+                    "given": "Guillermo"
+                },
+                {
+                    "family": "Al-Wassia",
+                    "given": "Heidi K"
+                },
+                {
+                    "family": "Rabe",
+                    "given": "Heike"
+                },
+                {
+                    "family": "Liley",
+                    "given": "Helen G"
+                },
+                {
+                    "family": "Atia",
+                    "given": "Hytham"
+                },
+                {
+                    "family": "Nour",
+                    "given": "Islam"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Jiang-Qin"
+                },
+                {
+                    "family": "Kattwinkel",
+                    "given": "John"
+                },
+                {
+                    "family": "Dorling",
+                    "given": "Jon S"
+                },
+                {
+                    "family": "Mercer",
+                    "given": "Judith S"
+                },
+                {
+                    "family": "Josephsen",
+                    "given": "Justin B"
+                },
+                {
+                    "family": "Fairchild",
+                    "given": "Karen D"
+                },
+                {
+                    "family": "Wallace",
+                    "given": "Kedra"
+                },
+                {
+                    "family": "Murphy",
+                    "given": "Kellie E"
+                },
+                {
+                    "family": "Robledo",
+                    "given": "Kristy P"
+                },
+                {
+                    "family": "Gharehbaghi",
+                    "given": "Manizheh M"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Veciana",
+                    "given": "Margarita"
+                },
+                {
+                    "family": "Goya",
+                    "given": "Maria"
+                },
+                {
+                    "family": "Kluckow",
+                    "given": "Martin"
+                },
+                {
+                    "family": "March",
+                    "given": "Melissa I"
+                },
+                {
+                    "family": "Meyer",
+                    "given": "Michael P"
+                },
+                {
+                    "family": "Mangla",
+                    "given": "Mukul K"
+                },
+                {
+                    "family": "Allam",
+                    "given": "Nahed E"
+                },
+                {
+                    "family": "Nasef",
+                    "given": "Nehad"
+                },
+                {
+                    "family": "Dipak",
+                    "given": "Niraj K"
+                },
+                {
+                    "family": "Andersson",
+                    "given": "Ola"
+                },
+                {
+                    "family": "Davis",
+                    "given": "Peter G"
+                },
+                {
+                    "family": "Pongmee",
+                    "given": "Pharuhad"
+                },
+                {
+                    "family": "Riley",
+                    "given": "Richard D"
+                },
+                {
+                    "family": "Simes",
+                    "given": "Robert John"
+                },
+                {
+                    "family": "Knol",
+                    "given": "Ronny"
+                },
+                {
+                    "family": "Arsan",
+                    "given": "Saadet"
+                },
+                {
+                    "family": "Shekhar",
+                    "given": "Shashank"
+                },
+                {
+                    "family": "Belk",
+                    "given": "Sheila S"
+                },
+                {
+                    "family": "Hosono",
+                    "given": "Shigeharu"
+                },
+                {
+                    "family": "Badurdeen",
+                    "given": "Shiraz"
+                },
+                {
+                    "family": "Pratesi",
+                    "given": "Simone"
+                },
+                {
+                    "family": "Dias",
+                    "given": "Sofia"
+                },
+                {
+                    "family": "Hooper",
+                    "given": "Stuart B"
+                },
+                {
+                    "family": "Sahoo",
+                    "given": "Tanushree"
+                },
+                {
+                    "family": "Debray",
+                    "given": "Thomas P A"
+                },
+                {
+                    "family": "Manoj",
+                    "given": "Varanattu C"
+                },
+                {
+                    "family": "Sundaram",
+                    "given": "Venkataseshan"
+                },
+                {
+                    "family": "Lago",
+                    "given": "Victor"
+                },
+                {
+                    "family": "Datta",
+                    "given": "Vikram"
+                },
+                {
+                    "family": "El-Naggar",
+                    "given": "Walid"
+                },
+                {
+                    "family": "Carlo",
+                    "given": "Waldemar A"
+                },
+                {
+                    "family": "Tarnow-Mordi",
+                    "given": "William O"
+                },
+                {
+                    "family": "Duley",
+                    "given": "Lelia"
+                },
+                {
+                    "family": "Askie",
+                    "given": "Lisa M"
+                }
+            ],
+            "container-title": "The Lancet",
+            "id": "seidler2023",
+            "issue": "10418",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        12
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "2209-2222",
+            "title": "Deferred cord clamping, cord milking, and immediate cord clamping at preterm birth: a systematic review and individual participant data meta-analysis",
+            "title-short": "Deferred cord clamping, cord milking, and immediate cord clamping at preterm birth",
+            "type": "article-journal",
+            "volume": "402"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0246109",
+            "URL": "http://dx.doi.org/10.1371/journal.pone.0246109",
+            "author": [
+                {
+                    "family": "Sura",
+                    "given": "Mandeep"
+                },
+                {
+                    "family": "Osoti",
+                    "given": "Alfred"
+                },
+                {
+                    "family": "Gachuno",
+                    "given": "Onesmus"
+                },
+                {
+                    "family": "Musoke",
+                    "given": "Rachel"
+                },
+                {
+                    "family": "Kagema",
+                    "given": "Frank"
+                },
+                {
+                    "family": "Gwako",
+                    "given": "George"
+                },
+                {
+                    "family": "Ondieki",
+                    "given": "Diana"
+                },
+                {
+                    "family": "Ndavi",
+                    "given": "Patrick M."
+                },
+                {
+                    "family": "Ogutu",
+                    "given": "Omondi"
+                }
+            ],
+            "container-title": "PLOS ONE",
+            "editor": [
+                {
+                    "family": "Ho",
+                    "given": "Jacqueline J."
+                }
+            ],
+            "id": "sura2021",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1,
+                        26
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "e0246109",
+            "title": "Effect of umbilical cord milking versus delayed cord clamping on preterm neonates in Kenya: A randomized controlled trial",
+            "title-short": "Effect of umbilical cord milking versus delayed cord clamping on preterm neonates in Kenya",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "DOI": "10.1101/2023.12.11.23299797",
+            "URL": "https://www.medrxiv.org/content/early/2023/12/13/2023.12.11.23299797",
+            "author": [
+                {
+                    "family": "Hunter",
+                    "given": "KE"
+                },
+                {
+                    "family": "Aberoumand",
+                    "given": "M"
+                },
+                {
+                    "family": "Libesman",
+                    "given": "S"
+                },
+                {
+                    "family": "Sotiropoulos",
+                    "given": "JX"
+                },
+                {
+                    "family": "Williams",
+                    "given": "J"
+                },
+                {
+                    "family": "Li",
+                    "given": "W"
+                },
+                {
+                    "family": "Aagerup",
+                    "given": "J"
+                },
+                {
+                    "family": "Mol",
+                    "given": "BW"
+                },
+                {
+                    "family": "Wang",
+                    "given": "R"
+                },
+                {
+                    "family": "Barba",
+                    "given": "A"
+                },
+                {
+                    "family": "Shrestha",
+                    "given": "N"
+                },
+                {
+                    "family": "Webster",
+                    "given": "AC"
+                },
+                {
+                    "family": "Seidler",
+                    "given": "AL"
+                }
+            ],
+            "container-title": "medRxiv",
+            "id": "Hunter2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Cold Spring Harbor Laboratory Press",
+            "title": "Development of the individual participant data (IPD) integrity tool for assessing the integrity of randomised trials using individual participant data",
+            "type": "article-journal"
+        }
+    ],
+    "project_biblios": []
+}

@@ -1,0 +1,3 @@
+"0","#| echo: false"
+"0","#| fig-alt: ""At graduation ceremony"""
+"0","knitr::include_graphics(""graduation.jpg"")"
