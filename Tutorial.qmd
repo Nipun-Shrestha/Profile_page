@@ -194,15 +194,28 @@ text(-16, -1, pos=4, cex=0.8, bquote(paste("Test for Subgroup Differences: ",
 
 The GDP per capita (inflation-adjusted) are plotted in x-axis and corresponding values of age-standardized cardiovascular disease (CVD) rates for A) Females and B) Males are plotted in y-axis. The size of bubble corresponds to the size of the population of the country. The definition of cardiovascular disease includes all eleven CVD types and is described [elsewhere](https://www.healthdata.org/research-analysis/gbd "GBD"). The data on cardiovascular disease rates were obtained from the [Global Burden of Disease](https://www.healthdata.org/research-analysis/gbd "GBD") and GDP per capita from [World Bank.](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&locations=8S&start=2001)
 
-```{r dpi=400}
+::: panel-tabset
+#### Loading Packages
+
+```{r library, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(ggplot2)
 library(gganimate)
 theme_set(theme_bw())
 library("gifski")
+```
+
+#### Loading Data
+
+```{r data, warning = FALSE, message = FALSE}
 load("~/GitHub/Profile/GBD.Rdata")
 dat1 <- dat1 %>% dyply::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
+```
+:::
 
+#### Plotting graph
+
+```{r dpi=400}
 
 p <- ggplot(
 dat1,
