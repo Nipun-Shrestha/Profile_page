@@ -237,3 +237,11 @@ R
 #animate(R, height=400, width=800, renderer=gifski_renderer())
 
 ```
+
+::: callout-note
+## Fixing error with MASS package for Github deployment
+
+```{r warning= False, messages=False, echo= False}
+pak::pak("any::MASS?reinstall")
+```
+:::
