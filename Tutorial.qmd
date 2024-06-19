@@ -53,10 +53,8 @@ library (readxl)
 
 #### Loading Data
 
-Loading data {this data is located in github repository. https://github.com/Nipun-Shrestha/Profile_page/blob/main/Icomp.xlsx}
-
 ```{r data, warning = FALSE, message = FALSE}
-Icomp <- read_excel("Icomp.xlsx")
+Icomp <- read_excel("~/GitHub/Profile/Icomp.xlsx")
 ```
 :::
 
@@ -203,7 +201,7 @@ library(gganimate)
 theme_set(theme_bw())
 library("gifski")
 load("~/GitHub/Profile/GBD.Rdata")
-dat1 <- dat1 %>% filter(measure =="DALYs (Disability-Adjusted Life Years)") 
+dat1 <- dat1 %>% dyply::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
 
 
 p <- ggplot(
