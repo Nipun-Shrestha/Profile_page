@@ -34,13 +34,8 @@
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-60.2",
-      "Source": "any",
-      "RemoteType": "any",
-      "RemotePkgRef": "any::MASS",
-      "RemoteRef": "any::MASS",
-      "RemoteRepos": "https://cran.rstudio.com/",
-      "RemotePkgPlatform": "x86_64-w64-mingw32",
-      "RemoteSha": "7.3-60.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "grDevices",
@@ -49,7 +44,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "e9480b1e48d58b6b4e120998144feab7"
+      "Hash": "2f342c46163b0b54d7b64d1f798e2c78"
     },
     "Matrix": {
       "Package": "Matrix",
