@@ -197,7 +197,7 @@ The GDP per capita (inflation-adjusted) are plotted in x-axis and correspondin
 ::: panel-tabset
 #### Loading Packages
 
-```{r lib, warning = FALSE, message = FALSE}
+```{r liby, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(ggplot2)
 library(gganimate)
