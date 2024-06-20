@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
@@ -113,6 +113,8 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../Tutorial.html"> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-in-touch" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">get in touch!</span>
@@ -187,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 <div>
 
 </div>
-<div class="quarto-layout-panel" style="color: gray" data-layout-ncol="2">
+<div class="quarto-layout-panel" data-layout-ncol="2" style="color: gray">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="Image 2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="Image 2.jpg" class="img-fluid"></a></p>
@@ -612,7 +614,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="container"><strong>Made with <a href="https://quarto.org/" target="_blank">Posit Quarto</a></strong></span></p>
+</div>   
+    <div class="nav-footer-center">
+<p><span class="container"><strong><a href="mailto:drnipunsth@gmail.com" target="_blank">Contact Nipun Shrestha</a></strong></span></p>
+</div>
+    <div class="nav-footer-right">
+<p><span class="container"><strong><a href="https://github.com/Nipun-Shrestha/Profile_page" target="_blank">Github Repo</a></strong></span></p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

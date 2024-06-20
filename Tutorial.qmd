@@ -197,7 +197,7 @@ The GDP per capita (inflation-adjusted) are plotted in x-axis and correspondin
 ::: panel-tabset
 #### Loading Packages
 
-```{r library, warning = FALSE, message = FALSE}
+```{r lib, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(ggplot2)
 library(gganimate)
@@ -207,7 +207,7 @@ library("gifski")
 
 #### Loading Data
 
-```{r data, warning = FALSE, message = FALSE}
+```{r dat, warning = FALSE, message = FALSE}
 load("~/GitHub/Profile/GBD.Rdata")
 dat1 <- dat1 %>% dyply::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
 ```
