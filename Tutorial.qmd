@@ -209,7 +209,7 @@ library("gifski")
 
 ```{r dat, warning = FALSE, message = FALSE}
 load("~/GitHub/Profile/GBD.Rdata")
-dat1 <- dat1 %>% dyply::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
+dat1 <- dat1 %>% dplyr::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
 ```
 :::
 
