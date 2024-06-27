@@ -249,8 +249,6 @@ R
 The shape file for Nepal can be obtained from Government of [Government of Nepal geoportalal geoportal](https://nationalgeoportal.gov.np/#/map) and availability of human resource data from [Open data Nepal](https://opendatanepal.com/dataset?category=Health&page=4).
 :::
 
-y
-
 ::: panel-tabset
 #### Loading Packages
 
@@ -282,7 +280,7 @@ points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 
 #### Plotting map and mapping data
 
-```{r plot}
+```{r fig.height= 15, fig.width=17}
 #| echo: false
 
 # Plotting data
