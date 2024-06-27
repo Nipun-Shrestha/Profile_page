@@ -252,7 +252,7 @@ The shape file for Nepal can be obtained from Government of [Government of Nepal
 ::: panel-tabset
 #### Loading Packages
 
-```{r library, warning = FALSE, message = FALSE}
+```{r, warning = FALSE, message = FALSE}
 library (sf)
 library (ggplot2)
 library (viridis)
@@ -262,7 +262,7 @@ library (tidyverse)
 
 #### Loading & Preparing Data
 
-```{r data}
+```{r map}
 #| echo: false
 #Loading datasets
 
@@ -280,7 +280,7 @@ points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 
 #### Plotting map and mapping data
 
-```{r}
+```{r plot}
 #| echo: false
 
 # Plotting data
