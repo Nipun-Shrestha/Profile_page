@@ -15,10 +15,6 @@ about:
     - icon: envelope
       text: Email
       href: mailto:drnipunsth@gmail.com
-google-analytics: 
-  tracking-id: "G-EY5KG3VY2K"
-  cookie-consent: true
-  anonymize-ip: true
 ---
 
 # Experience
