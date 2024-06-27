@@ -262,8 +262,8 @@ library (tidyverse)
 
 #### Loading & Preparing Data
 
-```{r map}
-#| echo: false
+```{r, warning = FALSE, message = FALSE}
+
 #Loading datasets
 
 data <- st_read("~/GitHub/Profile/districts.shp")
@@ -280,8 +280,8 @@ points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 
 #### Plotting map and mapping data
 
-```{r fig.height= 15, fig.width=17}
-#| echo: false
+```{r fig.height= 15, fig.width=17, warning = FALSE, message = FALSE}
+
 
 # Plotting data
 
