@@ -36,6 +36,7 @@ comments:
   #linkedin: true
 ---
 
+
 # Meta-analysis in R
 
 Cord clamping in pre-term babies data from the recently published individual participant data meta analysis is used for this task.[@seidler2023]
@@ -47,6 +48,7 @@ Note that only summary level data is used for this tutorial.
 ::: panel-tabset
 #### Loading Packages
 
+
 ```{r library, warning = FALSE, message = FALSE}
 library(tidyverse)
 library(lubridate)
@@ -55,26 +57,34 @@ library(metafor)
 library (readxl)
 ```
 
+
 #### Loading Data
+
 
 ```{r data, warning = FALSE, message = FALSE}
 Icomp <- read_excel("~/GitHub/Profile/Icomp.xlsx")
 ```
+
 :::
 
 ## Calculate log odd ratios and corresponding sampling variances
+
 
 ```{r calculate odds ratio}
 dat <- escalc(measure="OR", ai=Icomp$`n_event DCC`, bi=Icomp$n_non_event_DCC, ci=Icomp$`n_event ICC`, di=Icomp$n_non_event_ICC, slab =paste(Icomp$studyid), data=Icomp)
 ```
 
+
 ## Random-effects model (using log odd ratios and variances as input)
+
 
 ```{r model}
 res <- rma(dat$yi, dat$vi, data=dat, method="FE")
 ```
 
+
 ## Helper function
+
 
 ```{r helper function}
 mlabfun <- function(text, res) {
@@ -86,7 +96,9 @@ mlabfun <- function(text, res) {
       tau^2, " = ", .(formatC(res$tau2, digits=2, format="f")), ")")))}
 ```
 
+
 ## Forest plot
+
 
 ```{r fig.height= 10, fig.width=17, dpi=400}
 
@@ -108,12 +120,14 @@ text(c(mean(sav$ilab.xpos[1:2]),mean(sav$ilab.xpos[3:4])), data_height+3, c("DCC
 text(c(log(0.15),log(4)), -0.3, pos=1, c("Favours DCC", "Favours ICC"), cex=1.3)
 ```
 
+
 # Forest plot with subgroups
 
 Data from Cochrane review: Next-generation sequencing for guiding matched targeted therapies in people with relapsed or metastatic cancer[@kazmi2023] is used for this task.
 
 ::: panel-tabset
 #### Loading Packages
+
 
 ```{r lib, warning = FALSE, message = FALSE}
 library(tidyverse)
@@ -123,23 +137,29 @@ library(metafor)
 library (readxl)
 ```
 
+
 #### Loading Data
 
 Loading data
 
+
 ```{r data1, warning = FALSE, message = FALSE}
 df<- read_xlsx("~/GitHub/Profile/Subgroup.xlsx")
 ```
+
 :::
 
 ## Random-effects model (using log hazard ratios and variances as input)
+
 
 ```{r model1 , warning= FALSE}
 dat <- conv.wald(out=hr, ci.lb=ci.lb, ci.ub=ci.ub,n=ntot, data=df,slab=df$Study, transf=log)
 res <- rma(yi, vi, data=dat, slab=df$Study)
 ```
 
+
 ## Helper function
+
 
 ```{r helper function1}
 mlabfun <- function(text, res4) {
@@ -151,7 +171,9 @@ mlabfun <- function(text, res4) {
       tau^2, " = ", .(formatC(res4$tau2, digits=2, format="f")), ")")))}
 ```
 
+
 ## Forest plot
+
 
 ```{r fig.height= 6, fig.width=12, dpi=400}
 
@@ -194,12 +216,14 @@ text(-16, -1, pos=4, cex=0.8, bquote(paste("Test for Subgroup Differences: ",
 
 ```
 
+
 # Age-standardized DALYs rate of cardiovascular disease per 100,000 population from 2001 to 2021 in South Asia by country’s GDP/capita (US\$)
 
 The GDP per capita (inflation-adjusted) are plotted in x-axis and corresponding values of age-standardized cardiovascular disease (CVD) rates for A) Females and B) Males are plotted in y-axis. The size of bubble corresponds to the size of the population of the country. The definition of cardiovascular disease includes all eleven CVD types and is described [elsewhere](https://www.healthdata.org/research-analysis/gbd "GBD"). The data on cardiovascular disease rates were obtained from the [Global Burden of Disease](https://www.healthdata.org/research-analysis/gbd "GBD") and GDP per capita from [World Bank.](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&locations=8S&start=2001)
 
 ::: panel-tabset
 #### Loading Packages
+
 
 ```{r liby, warning = FALSE, message = FALSE}
 library(conflicted)
@@ -210,15 +234,19 @@ theme_set(theme_bw())
 library("gifski")
 ```
 
+
 #### Loading Data
+
 
 ```{r dat, warning = FALSE, message = FALSE}
 load("~/GitHub/Profile/GBD.Rdata")
 dat1 <- dat1 %>% dplyr::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
 ```
+
 :::
 
 #### Plotting graph
+
 
 ```{r dpi=400}
 
@@ -243,14 +271,16 @@ R
 
 ```
 
+
 # Creating Maps and Mapping data with ggplot2
 
 ::: callout-note
-The shape file for Nepal can be obtained from Government of [Government of Nepal geoportalal ](https://nationalgeoportal.gov.np/#/map)and availability of human resource data from [Open data Nepal](https://opendatanepal.com/dataset?category=Health&page=4).
+The shape file for Nepal can be obtained from Government of [Government of Nepal geoportalal geoportal](https://nationalgeoportal.gov.np/#/map) and availability of human resource data from [Open data Nepal](https://opendatanepal.com/dataset?category=Health&page=4).
 :::
 
 ::: panel-tabset
 #### Loading Packages
+
 
 ```{r, warning = FALSE, message = FALSE}
 library (sf)
@@ -260,7 +290,9 @@ library (ggthemes)
 library (tidyverse)
 ```
 
+
 #### Loading & Preparing Data
+
 
 ```{r map}
 #| echo: false
@@ -276,9 +308,11 @@ dat <- merge(data, df, by="DISTRICT")
 points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 
 ```
+
 :::
 
 #### Plotting map and mapping data
+
 
 ```{r fig.height= 15, fig.width=17}
 #| echo: false
@@ -288,3 +322,4 @@ points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 ggplot(data=dat) +geom_sf (aes(fill=Fulfilled_percent), color="black", size=0.2) +scale_fill_viridis_c(option = "viridis", trans="sqrt")+ geom_text(data=points, aes(x=X, y=Y, label= paste(DISTRICT)), color="darkblue", size = 2.5) + ggtitle("Fullfilled percentage of sanctioned post of Medical doctors in Nepal 2072/73") +theme_void()
 
 ```
+
