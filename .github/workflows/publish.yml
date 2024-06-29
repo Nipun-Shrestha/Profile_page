@@ -23,17 +23,9 @@ jobs:
           r-version: '4.2.0'
 
       - name: Install R Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
+        uses: r-lib/actions/setup-renv@v2
         with:
-          packages:
-            any::knitr
-            any::rmarkdown
-            any::downlit
-            any::xml2
-            any::tidyverse
-            any::metafor
-            any::ggplot2
-            any::gganimate
+          cache-version: 1
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
