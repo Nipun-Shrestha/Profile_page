@@ -51,5 +51,8 @@ format:
       cosmo
       styles.scss
       mainfont:Nunito Sans
+    include-in-header:
+      - text: |
+          <meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ" />
     toc: true
 editor: visual
