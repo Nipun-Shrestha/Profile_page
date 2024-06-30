@@ -271,9 +271,11 @@ medical_doc <- read.csv("~/GitHub/Profile/medical_doc.csv")
 
 #Preparing dataset
 
+##Merging shape data with human resource data
 df <- medical_doc %>% mutate(across(where(is.character), toupper))
 dat <- merge(data, df, by="DISTRICT")
 
+#Creating list of co-ordinates for adding district names in the map
 points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
 
 ```
