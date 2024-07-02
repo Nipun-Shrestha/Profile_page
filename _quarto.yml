@@ -4,7 +4,6 @@ project:
 
 website:
     navbar:
-      title: "Nipun"
       left:
       - href: index.qmd
         text: Home
@@ -54,5 +53,6 @@ format:
     include-in-header:
       - text: |
           <meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ" />
+          <meta name="google-adsense-account" content="ca-pub-3549206248714723">
     toc: true
 editor: visual
