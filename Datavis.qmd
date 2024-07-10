@@ -1,0 +1,139 @@
+---
+title: "Tutorial"
+#format:
+ # html:
+ #   grid: 
+  #    body-width: 2000px
+   #   sidebar-width: 200px
+    #  margin-width: 200px
+code-fold: show
+code-link: true
+code-tools: true
+highlight-style: github
+bibliography: references.bib
+author: 
+  - name: Dr Nipun Shrestha
+    url: https://ctc.usyd.edu.au/about-us/our-people/academics-research-fellows/dr-nipun-shrestha/
+    orcid: 0000-0003-3542-8130
+    degrees: 
+      - MBBS
+      - MPH
+      - PhD
+google-scholar: true
+lightbox: true
+engine: knitr
+comments:
+    utterances: 
+      repo: Nipun-Shrestha/Profile_page
+
+#filters:
+ # - social-share
+#share:
+ # permalink: https://nipun-shrestha.github.io/Profile_page/Tutorial.html
+  #description: "awesome page"
+  #twitter: true
+  #facebook: true
+  #linkedin: true
+---
+
+# Age-standardized DALYs rate of cardiovascular disease per 100,000 population from 2001 to 2021 in South Asia by country’s GDP/capita (US\$)
+
+The GDP per capita (inflation-adjusted) are plotted in x-axis and corresponding values of age-standardized cardiovascular disease (CVD) rates for A) Females and B) Males are plotted in y-axis. The size of bubble corresponds to the size of the population of the country. The definition of cardiovascular disease includes all eleven CVD types and is described [elsewhere](https://www.healthdata.org/research-analysis/gbd "GBD"). The data on cardiovascular disease rates were obtained from the [Global Burden of Disease](https://www.healthdata.org/research-analysis/gbd "GBD") and GDP per capita from [World Bank.](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?end=2022&locations=8S&start=2001)
+
+::: panel-tabset
+#### Loading Packages
+
+```{r liby, warning = FALSE, message = FALSE}
+library(conflicted)
+library(tidyverse)
+library(ggplot2)
+library(gganimate)
+theme_set(theme_bw())
+library("gifski")
+```
+
+#### Loading Data
+
+```{r dat, warning = FALSE, message = FALSE}
+load("~/GitHub/Profile/GBD.Rdata")
+dat1 <- dat1 %>% dplyr::filter(measure =="DALYs (Disability-Adjusted Life Years)") 
+```
+:::
+
+#### Plotting graph
+
+```{r dpi=400}
+
+p <- ggplot(
+dat1,
+aes(x = income, y=val, size = Population, colour = Country)
+) +
+geom_point(show.legend = TRUE, alpha = 1) +
+scale_color_viridis_d() +
+scale_size(range = c(2, 12)) +
+scale_x_log10() +
+labs(x = "Income per person (GDP/capita PPPS inflation-adjusted)", y = "Age-standardized DALYs rate per 100,000") +
+  facet_wrap(~sex)
+
+
+R <- p + transition_time(year) +
+labs(title = "Year: {frame_time}") +
+shadow_mark(alpha = 2, size = 2) +
+  facet_wrap(~sex)
+R
+#animate(R, height=400, width=800, renderer=gifski_renderer())
+
+```
+
+# Creating Maps and Mapping data with ggplot2
+
+::: callout-note
+The shape file for Nepal can be obtained from Government of [Government of Nepal geoportalal](https://nationalgeoportal.gov.np/#/map)and availability of human resource data from [Open data Nepal](https://opendatanepal.com/dataset?category=Health&page=4).
+:::
+
+::: panel-tabset
+#### Loading Packages
+
+```{r, warning = FALSE, message = FALSE}
+library (sf)
+library (ggplot2)
+library (viridis)
+library (ggthemes)
+library (tidyverse)
+```
+
+#### Loading & Preparing Data
+
+```{r, warning = FALSE, message = FALSE}
+
+#Loading datasets
+
+data <- st_read("~/GitHub/Profile/districts.shp")
+medical_doc <- read.csv("~/GitHub/Profile/medical_doc.csv")
+
+#Preparing dataset
+
+##Merging shape data with human resource data
+df <- medical_doc %>% mutate(across(where(is.character), toupper))
+dat <- merge(data, df, by="DISTRICT")
+
+#Creating list of co-ordinates for adding district names in the map
+points <- cbind(dat, st_coordinates(st_centroid(dat$geometry)))
+
+```
+:::
+
+#### Plotting map and mapping data
+
+```{r fig.height= 15, fig.width=17, warning = FALSE, message = FALSE}
+
+
+# Plotting data
+
+ggplot(data=dat) +geom_sf (aes(fill=Fulfilled_percent), color="black", size=0.2) + 
+    scale_fill_viridis_c(option = "viridis", trans="sqrt")+ 
+    geom_text(data=points, aes(x=X, y=Y, label= paste(DISTRICT)), color="darkblue", size = 2.5) + 
+    ggtitle("Fullfilled percentage of sanctioned post of Medical doctors in Nepal 2072/73") +
+    theme_void()
+
+```

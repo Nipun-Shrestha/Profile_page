@@ -20,6 +20,28 @@ $navbar-fg: $medium-green;
 $navbar-hl: $purple; 
 $body-bg: $light-green;
 
+
+// Links
+$link-color: $orange !default;
+$link-decoration: none !default;
+$link-hover-color: $orange !default;
+$link-hover-decoration: underline !default;
+
+// Footer
+$footer-bg: $gray-900 !default;
+$footer-fg: $gray-300 !default;
+
+// Inline code
+$code-bg: $gray-200 !default;
+$code-color: $gray-900 !default;
+
+// TOC
+$toc-color: $orange;
+$toc-font-size: 1em;
+
+// Code copy
+$btn-code-copy-color-active: $orange !default;
+
 /* CLASS SELECTORS (copied from inspecting site -- Quarto defined?) */
 
 // resize logo (top left corner) see https://github.com/robertmitchellv/robertmitchellv.github.io/blob/main/custom-dark.scss

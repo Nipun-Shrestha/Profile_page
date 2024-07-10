@@ -11,7 +11,12 @@ website:
         text: About
       - Publications.qmd
       - Posts.qmd
-      - Tutorial.qmd
+      - text: Tutorial
+        menu:
+         - text: Meta-analysis in R
+           href: MetaR.qmd
+         - text: Data visualisation
+           href: Datavis.qmd        
       right:
       - text: get in touch!
         menu:
@@ -36,13 +41,21 @@ website:
       right: |
         <span class="container"><strong>[Github Repo](https://github.com/Nipun-Shrestha/Profile_page){target="_blank"}</strong></span>
       background: "#306A9E"
-twitter-card: true
-open-graph: true
+twitter-card: 
+    creator: "@nipun_shrestha"
+    image: "https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png"
 
+open-graph:
+    image: "https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png"
+    locale: en_US
+    
 google-analytics: 
   tracking-id: "G-EY5KG3VY2K"
   cookie-consent: true
   anonymize-ip: true
+
+execute:
+  freeze: true
 
 format:
   html:

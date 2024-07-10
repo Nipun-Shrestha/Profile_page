@@ -69,14 +69,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ">
-<meta name="google-adsense-account" content="ca-pub-3549206248714723">
 
 
 <meta property="og:title" content="about">
 <meta property="og:description" content="a bit more about me">
+<meta property="og:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:title" content="about">
 <meta name="twitter:description" content="a bit more about me">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta name="twitter:creator" content="@nipun_shrestha">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -107,10 +110,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./Posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorial.qmd" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tutorial.qmd</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial.qmd">    
+        <li>
+    <a class="dropdown-item" href="./MetaR.html">
+ <span class="dropdown-text">Meta-analysis in R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./Datavis.html">
+ <span class="dropdown-text">Datavisualisation</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -294,7 +308,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Nipun-Shrestha\.github\.io\/Profile\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
