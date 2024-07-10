@@ -4,6 +4,7 @@ project:
 
 website:
     navbar:
+      logo: logo.png
       left:
       - href: index.qmd
         text: Home
