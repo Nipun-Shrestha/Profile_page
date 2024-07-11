@@ -1,17 +1,12 @@
 ---
 title: "Booklet"
-lightbox: true
 categories:
   -Booklet
 ---
 
 # Strategies for increasing physical activity and reducing sedentary behavior
 
-Designed a booklet for [INTUE](https://www.intue.org/) – International Network of Time-Use Epidemiologists. Click on the image.
-
-[![](Figure%204_001.png){width="400"}](https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf)
-
-
+Designed a booklet for [INTUE](https://www.intue.org/) – International Network of Time-Use Epidemiologists.![](stand.png)
 
 <iframe width="1050" height="1200" src="booklet.pdf">
 
