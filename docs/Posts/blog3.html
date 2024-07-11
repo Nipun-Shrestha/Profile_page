@@ -67,14 +67,17 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ">
-<meta name="google-adsense-account" content="ca-pub-3549206248714723">
 
 
 <meta property="og:title" content="Booklet">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:title" content="Booklet">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta name="twitter:creator" content="@nipun_shrestha">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -105,10 +108,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../Posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../Tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorial" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tutorial</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial">    
+        <li>
+    <a class="dropdown-item" href="../MetaR.html">
+ <span class="dropdown-text">Meta-analysis in R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../Datavis.html">
+ <span class="dropdown-text">Data visualisation</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -184,6 +198,8 @@ ul.task-list li input[type="checkbox"] {
 <h1>Strategies for increasing physical activity and reducing sedentary behavior</h1>
 <p>Designed a booklet for <a href="https://www.intue.org/">INTUE</a> – International Network of Time-Use Epidemiologists. Click on the image.</p>
 <p><a href="https://www.intue.org/wp-content/uploads/2021/10/Make-your-day-active-for-health-and-fun.pdf"><img src="Figure 4_001.png" class="img-fluid" width="400"></a></p>
+<iframe width="1050" height="1200" src="booklet.pdf">
+</iframe>
 
 
 </section>
@@ -270,7 +286,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Nipun-Shrestha\.github\.io\/Profile\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

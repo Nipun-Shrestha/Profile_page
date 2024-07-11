@@ -1,9 +1,3 @@
-`<iframe`{=html}
-
-` width="1050"`{=html}
-
-` height="1200" `{=html}
-
-`src="resume.pdf">`{=html}
+<iframe width="1050" height="1200" src="resume.pdf">
 
 </iframe>
