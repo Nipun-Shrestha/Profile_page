@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Nipun-Shrestha.github.io/Profile/Tutorial.html</loc>
-    <lastmod>2024-06-30T09:10:14.206Z</lastmod>
+    <lastmod>2024-07-07T09:47:23.418Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Posts.html</loc>
-    <lastmod>2024-06-19T04:01:01.793Z</lastmod>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Publications.html</loc>
+    <lastmod>2024-07-11T09:30:59.844Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog2.html</loc>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog3.html</loc>
+    <lastmod>2024-07-11T09:25:18.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog1.html</loc>
     <lastmod>2024-06-19T04:01:01.793Z</lastmod>
   </url>
   <url>
@@ -17,27 +21,35 @@
     <lastmod>2024-06-26T10:51:15.851Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Blog.html</loc>
-    <lastmod>2024-06-19T04:01:01.790Z</lastmod>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Datavis.html</loc>
+    <lastmod>2024-07-07T10:37:27.226Z</lastmod>
   </url>
   <url>
     <loc>https://Nipun-Shrestha.github.io/Profile/about.html</loc>
-    <lastmod>2024-06-19T04:01:01.884Z</lastmod>
+    <lastmod>2024-07-11T05:39:13.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Blog.html</loc>
+    <lastmod>2024-06-19T04:01:01.790Z</lastmod>
   </url>
   <url>
     <loc>https://Nipun-Shrestha.github.io/Profile/github.html</loc>
     <lastmod>2024-06-19T04:01:02.043Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog1.html</loc>
+    <loc>https://Nipun-Shrestha.github.io/Profile/MetaR.html</loc>
+    <lastmod>2024-07-11T09:27:25.204Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog2.html</loc>
     <lastmod>2024-06-19T04:01:01.793Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Posts/blog3.html</loc>
+    <loc>https://Nipun-Shrestha.github.io/Profile/Posts.html</loc>
     <lastmod>2024-06-19T04:01:01.793Z</lastmod>
   </url>
   <url>
-    <loc>https://Nipun-Shrestha.github.io/Profile/Publications.html</loc>
-    <lastmod>2024-06-19T04:01:01.795Z</lastmod>
+    <loc>https://Nipun-Shrestha.github.io/Profile/resume.html</loc>
+    <lastmod>2024-07-11T08:21:39.894Z</lastmod>
   </url>
 </urlset>
