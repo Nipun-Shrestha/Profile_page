@@ -63,6 +63,60 @@
       ],
       "Hash": "1920b2f11133b12350024297d8a4ff4a"
     },
+    "R.cache": {
+      "Package": "R.cache",
+      "Version": "0.16.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R.methodsS3",
+        "R.oo",
+        "R.utils",
+        "digest",
+        "utils"
+      ],
+      "Hash": "fe539ca3f8efb7410c3ae2cf5fe6c0f8"
+    },
+    "R.methodsS3": {
+      "Package": "R.methodsS3",
+      "Version": "1.8.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "utils"
+      ],
+      "Hash": "278c286fd6e9e75d0c2e8f731ea445c8"
+    },
+    "R.oo": {
+      "Package": "R.oo",
+      "Version": "1.26.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R.methodsS3",
+        "methods",
+        "utils"
+      ],
+      "Hash": "4fed809e53ddb5407b3da3d0f572e591"
+    },
+    "R.utils": {
+      "Package": "R.utils",
+      "Version": "2.12.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R.methodsS3",
+        "R.oo",
+        "methods",
+        "tools",
+        "utils"
+      ],
+      "Hash": "3dc2829b790254bfba21e60965787651"
+    },
     "R6": {
       "Package": "R6",
       "Version": "2.5.1",
@@ -93,6 +147,33 @@
         "utils"
       ],
       "Hash": "5ea2700d21e038ace58269ecdbeb9ec0"
+    },
+    "RcppArmadillo": {
+      "Package": "RcppArmadillo",
+      "Version": "14.0.0-1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "methods",
+        "stats",
+        "utils"
+      ],
+      "Hash": "a711769be34214addf7805278b72d56b"
+    },
+    "RcppEigen": {
+      "Package": "RcppEigen",
+      "Version": "0.3.4.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "stats",
+        "utils"
+      ],
+      "Hash": "df49e3306f232ec28f1604e36a202847"
     },
     "askpass": {
       "Package": "askpass",
@@ -599,6 +680,35 @@
       ],
       "Hash": "c6e8a7ff1b78529309cb2186ec1e3d38"
     },
+    "ggforce": {
+      "Package": "ggforce",
+      "Version": "0.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "MASS",
+        "R",
+        "Rcpp",
+        "RcppEigen",
+        "cli",
+        "ggplot2",
+        "grDevices",
+        "grid",
+        "gtable",
+        "lifecycle",
+        "polyclip",
+        "rlang",
+        "scales",
+        "stats",
+        "systemfonts",
+        "tidyselect",
+        "tweenr",
+        "utils",
+        "vctrs",
+        "withr"
+      ],
+      "Hash": "384b388bd9155468d2c851846ee69f9f"
+    },
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "3.5.1",
@@ -623,6 +733,52 @@
         "withr"
       ],
       "Hash": "44c6a2f8202d5b7e878ea274b1092426"
+    },
+    "ggraph": {
+      "Package": "ggraph",
+      "Version": "2.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "MASS",
+        "R",
+        "cli",
+        "cpp11",
+        "dplyr",
+        "ggforce",
+        "ggplot2",
+        "ggrepel",
+        "graphlayouts",
+        "grid",
+        "igraph",
+        "lifecycle",
+        "memoise",
+        "rlang",
+        "scales",
+        "stats",
+        "tidygraph",
+        "utils",
+        "vctrs",
+        "viridis",
+        "withr"
+      ],
+      "Hash": "1f5d21a9e1f84b4a81ddacb8f052ca61"
+    },
+    "ggrepel": {
+      "Package": "ggrepel",
+      "Version": "0.9.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "ggplot2",
+        "grid",
+        "rlang",
+        "scales",
+        "withr"
+      ],
+      "Hash": "cc3361e234c4a5050e29697d675764aa"
     },
     "ggthemes": {
       "Package": "ggthemes",
@@ -713,6 +869,19 @@
         "withr"
       ],
       "Hash": "d6db1667059d027da730decdc214b959"
+    },
+    "graphlayouts": {
+      "Package": "graphlayouts",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "RcppArmadillo",
+        "igraph"
+      ],
+      "Hash": "d329345a6a37666ca3f18f3b3c1347b7"
     },
     "gridExtra": {
       "Package": "gridExtra",
@@ -830,6 +999,29 @@
         "uuid"
       ],
       "Hash": "99df65cfef20e525ed38c3d2577f7190"
+    },
+    "igraph": {
+      "Package": "igraph",
+      "Version": "2.0.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "Matrix",
+        "R",
+        "cli",
+        "cpp11",
+        "grDevices",
+        "graphics",
+        "lifecycle",
+        "magrittr",
+        "methods",
+        "pkgconfig",
+        "rlang",
+        "stats",
+        "utils",
+        "vctrs"
+      ],
+      "Hash": "c3b7d801d722e26e4cd888e042bf9af5"
     },
     "isoband": {
       "Package": "isoband",
@@ -1127,6 +1319,16 @@
       ],
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
     },
+    "polyclip": {
+      "Package": "polyclip",
+      "Version": "1.10-6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "436542aadb70675e361cf359285af7c7"
+    },
     "prettyunits": {
       "Package": "prettyunits",
       "Version": "1.2.0",
@@ -1416,6 +1618,26 @@
       ],
       "Hash": "c19df082ba346b0ffa6f833e92de34d1"
     },
+    "scholar": {
+      "Package": "scholar",
+      "Version": "0.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R.cache",
+        "dplyr",
+        "ggplot2",
+        "ggraph",
+        "httr",
+        "rlang",
+        "rvest",
+        "stringr",
+        "tidygraph",
+        "xml2"
+      ],
+      "Hash": "9ad0ff7b08161a11df62b43a533930ac"
+    },
     "selectr": {
       "Package": "selectr",
       "Version": "0.4-2",
@@ -1530,6 +1752,29 @@
         "vctrs"
       ],
       "Hash": "a84e2cc86d07289b3b6f5069df7a004c"
+    },
+    "tidygraph": {
+      "Package": "tidygraph",
+      "Version": "1.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R6",
+        "cli",
+        "cpp11",
+        "dplyr",
+        "igraph",
+        "lifecycle",
+        "magrittr",
+        "pillar",
+        "rlang",
+        "stats",
+        "tibble",
+        "tidyr",
+        "tools",
+        "utils"
+      ],
+      "Hash": "2149824d406f233b57b087be72c5f163"
     },
     "tidyr": {
       "Package": "tidyr",

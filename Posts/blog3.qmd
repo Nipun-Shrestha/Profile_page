@@ -2,11 +2,12 @@
 title: "Booklet"
 categories:
   -Booklet
+image: stand.png
 ---
 
 # Strategies for increasing physical activity and reducing sedentary behavior
 
-Designed a booklet for [INTUE](https://www.intue.org/) – International Network of Time-Use Epidemiologists.![](stand.png)
+Designed a booklet for [INTUE](https://www.intue.org/) – International Network of Time-Use Epidemiologists.
 
 <iframe width="1050" height="1200" src="booklet.pdf">
 

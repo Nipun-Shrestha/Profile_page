@@ -33,6 +33,9 @@ website:
       - icon: github
         text: Github
         href: https://github.com/Nipun-Shrestha
+    page-navigation: true
+    back-to-top-navigation: true
+    reader-mode: true
     page-footer:
       center: |
         <span class="container"><strong>[Contact Nipun Shrestha](mailto:drnipunsth@gmail.com){target="_blank"}</strong></span>
