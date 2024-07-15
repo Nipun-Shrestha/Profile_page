@@ -1,5 +1,5 @@
 ---
-title: "Tutorial"
+title: "Data visualisation in R"
 #format:
  # html:
  #   grid: 

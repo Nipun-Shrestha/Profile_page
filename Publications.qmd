@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: " {{< fa newspaper >}} Publications"
 author: 
   - name: Dr Nipun Shrestha
     url: https://ctc.usyd.edu.au/about-us/our-people/academics-research-fellows/dr-nipun-shrestha/
@@ -37,3 +37,5 @@ knitr::kable(pp,
              caption = 'List of Co-Authored Publications')
 ```
 
+```         
+```

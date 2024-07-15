@@ -17,7 +17,7 @@ about:
       href: mailto:drnipunsth@gmail.com
 ---
 
-# Experience
+# {{< fa graduation-cap >}} Experience
 
 -   Post Doctoral Research Associate \| University of Sydney
 
@@ -31,7 +31,7 @@ about:
 
     Active Living and Public Health \| 09/2020 - 02/2021
 
-# Education
+# {{< fa institution >}} Education
 
 -   Victoria University \| Melbourne, Australia
 

@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.4.555">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Dr Nipun Shrestha">
-<title>Tutorial</title>
+<title>Data visualisation in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -99,18 +101,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script><meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ">
-<meta property="og:title" content="Tutorial">
+<meta property="og:title" content="Data visualisation in R">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:title" content="Tutorial">
+<meta name="twitter:title" content="Data visualisation in R">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
 <meta name="twitter:creator" content="@nipun_shrestha">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="citation_title" content="Tutorial">
+<meta name="citation_title" content="Data visualisation in R">
 <meta name="citation_author" content="Dr Nipun Shrestha">
-<meta name="citation_fulltext_html_url" content="https://Nipun-Shrestha.github.io/Profile//Datavis.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Are targeted therapies effective in the relapsed or metastatic cancer setting? A Cochrane meta-analysis;,citation_author=F. Kazmi;,citation_author=N. Shrestha;,citation_author=T. Foord;,citation_author=T. F. Liu;,citation_author=P. Heesen;,citation_author=S. Booth;,citation_author=D. Dodwell;,citation_author=Y. Kheng Wei;,citation_author=S. Lord;,citation_author=S. Blagden;,citation_publication_date=2023-10;,citation_cover_date=2023-10;,citation_year=2023;,citation_fulltext_html_url=http://dx.doi.org/10.1016/j.esmoop.2023.101649;,citation_issue=1;,citation_doi=10.1016/j.esmoop.2023.101649;,citation_volume=8;,citation_language=en;,citation_journal_title=ESMO Open;">
 <meta name="citation_reference" content="citation_title=Deferred cord clamping, cord milking, and immediate cord clamping at preterm birth: a systematic review and individual participant data meta-analysis;,citation_author=Anna Lene Seidler;,citation_author=Mason Aberoumand;,citation_author=Kylie E Hunter;,citation_author=Angie Barba;,citation_author=Sol Libesman;,citation_author=Jonathan G Williams;,citation_author=Nipun Shrestha;,citation_author=Jannik Aagerup;,citation_author=James X Sotiropoulos;,citation_author=Alan A Montgomery;,citation_author=Gillian M L Gyte;,citation_author=Lelia Duley;,citation_author=Lisa M Askie;,citation_author=Anna Lene Seidler;,citation_author=Mason Aberoumand;,citation_author=Kylie E Hunter;,citation_author=Angie Barba;,citation_author=Sol Libesman;,citation_author=Jonathan G Williams;,citation_author=Nipun Shrestha;,citation_author=Jannik Aagerup;,citation_author=James X Sotiropoulos;,citation_author=Alan A Montgomery;,citation_author=Gillian M L Gyte;,citation_author=Aashim Garg;,citation_author=Aditi Kumar;,citation_author=Aidan C Tan;,citation_author=Amir Kugelman;,citation_author=Angela C Webster;,citation_author=Anu A George;,citation_author=Anu Thukral;,citation_author=Anup C Katheria;,citation_author=Arjan B Pas;,citation_author=Ashish KC;,citation_author=Berndt Urlesberger;,citation_author=Bernhard Schwaberger;,citation_author=Carl H Backes;,citation_author=Catalina De Paco Matallana;,citation_author=Chamnan Tanprasertkul;,citation_author=Chayatat Ruangkit;,citation_author=Deepak Chawla;,citation_author=Douglas A Blank;,citation_author=Emel Okulu;,citation_author=Eugene M Dempsey;,citation_author=Govindu Ram Mohan;,citation_author=Graeme R Polglase;,citation_author=Guillermo Carroli;,citation_author=Heidi K Al-Wassia;,citation_author=Heike Rabe;,citation_author=Helen G Liley;,citation_author=Hytham Atia;,citation_author=Islam Nour;,citation_author=Jiang-Qin Liu;,citation_author=John Kattwinkel;,citation_author=Jon S Dorling;,citation_author=Judith S Mercer;,citation_author=Justin B Josephsen;,citation_author=Karen D Fairchild;,citation_author=Kedra Wallace;,citation_author=Kellie E Murphy;,citation_author=Kristy P Robledo;,citation_author=Manizheh M Gharehbaghi;,citation_author=Margarita Veciana;,citation_author=Maria Goya;,citation_author=Martin Kluckow;,citation_author=Melissa I March;,citation_author=Michael P Meyer;,citation_author=Mukul K Mangla;,citation_author=Nahed E Allam;,citation_author=Nehad Nasef;,citation_author=Niraj K Dipak;,citation_author=Ola Andersson;,citation_author=Peter G Davis;,citation_author=Pharuhad Pongmee;,citation_author=Richard D Riley;,citation_author=Robert John Simes;,citation_author=Ronny Knol;,citation_author=Saadet Arsan;,citation_author=Shashank Shekhar;,citation_author=Sheila S Belk;,citation_author=Shigeharu Hosono;,citation_author=Shiraz Badurdeen;,citation_author=Simone Pratesi;,citation_author=Sofia Dias;,citation_author=Stuart B Hooper;,citation_author=Tanushree Sahoo;,citation_author=Thomas P A Debray;,citation_author=Varanattu C Manoj;,citation_author=Venkataseshan Sundaram;,citation_author=Victor Lago;,citation_author=Vikram Datta;,citation_author=Walid El-Naggar;,citation_author=Waldemar A Carlo;,citation_author=William O Tarnow-Mordi;,citation_author=Lelia Duley;,citation_author=Lisa M Askie;,citation_publication_date=2023-12;,citation_cover_date=2023-12;,citation_year=2023;,citation_fulltext_html_url=http://dx.doi.org/10.1016/S0140-6736(23)02468-6;,citation_issue=10418;,citation_doi=10.1016/s0140-6736(23)02468-6;,citation_volume=402;,citation_language=en;,citation_journal_title=The Lancet;">
@@ -150,21 +151,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial">
 <li>
     <a class="dropdown-item" href="./MetaR.html">
- <span class="dropdown-text">Meta-analysis in R</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-tree" aria-label="tree"></i> Meta-analysis in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Datavis.html">
- <span class="dropdown-text">Data visualisation</span></a>
+ <span class="dropdown-text"><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Data visualisation</span></a>
   </li>  
     </ul>
 </li>
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-in-touch" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">get in touch!</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-paper-plane--get-in-touch" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-paper-plane" aria-label="paper-plane"></i> get in touch!</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-get-in-touch">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-paper-plane--get-in-touch">
 <li>
     <a class="dropdown-item" href="https://twitter.com/nipun_shrestha"><i class="bi bi-twitter" role="img">
 </i> 
@@ -186,6 +187,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
     <a href="https://github.com/Nipun-Shrestha" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -201,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Tutorial</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Data visualisation in R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -357,7 +363,7 @@ Geodetic CRS:  WGS 84</code></pre>
 
 <!-- -->
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -489,7 +495,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Nipun-Shrestha\.github\.io\/Profile\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -819,7 +825,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><script src="https://utteranc.es/client.js" repo="Nipun-Shrestha/Profile_page" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tutorial"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data visualisation in R"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#format:</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"> # html:</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"> #   grid: </span></span>
@@ -970,7 +976,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p><span class="container"><strong><a href="https://github.com/Nipun-Shrestha/Profile_page" target="_blank">Github Repo</a></strong></span></p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

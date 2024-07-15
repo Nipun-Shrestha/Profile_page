@@ -9,16 +9,18 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - Publications.qmd
-      - Posts.qmd
+      - href: Publications.qmd
+        text: Publications
+      - href: Posts.qmd
+        text: Blog
       - text: Tutorial
         menu:
-         - text: Meta-analysis in R
+         - text: "{{< fa tree >}} Meta-analysis in R" 
            href: MetaR.qmd
-         - text: Data visualisation
+         - text: "{{< fa chart-line >}} Data visualisation"  
            href: Datavis.qmd        
       right:
-      - text: get in touch!
+      - text: "{{< fa paper-plane >}} get in touch!"  
         menu:
           - icon: twitter
             text: Twitter
@@ -64,7 +66,7 @@ format:
   html:
     theme: 
       cosmo
-      styles.scss
+      styles.css
       mainfont:Nunito Sans
     include-in-header:
       - text: |
