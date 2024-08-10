@@ -32,3 +32,11 @@ PhD graduation ceremony Victoria University.
 -   Initiated and led several internal workshops on systematic reviews at Victoria University and University of Sydney
 
 -   Academic editor: PLOS One, Frontiers in Sports and Active Living
+
+## Take a look at what is currently ~~on my mind~~ on my Twitter
+
+```{=html}
+
+<a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/nipun_shrestha?ref_src=twsrc%5Etfw">Tweets by nipun_shrestha</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```

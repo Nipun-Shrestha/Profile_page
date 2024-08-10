@@ -1,0 +1,29 @@
+
+```{r}
+#| echo: false
+
+suppressPackageStartupMessages({
+  library(scholar)
+  library(tidyverse)
+})
+
+id <- 'BofoZlAAAAAJ&hl'
+```
+
+```{r}
+#| echo: false
+p <- get_publications(id)
+pp <- p%>%
+  select(year,title,journal,author)%>%
+  filter(!journal=="")%>%
+  arrange(desc(year))
+```
+
+```{r}
+#| echo: false
+knitr::kable(pp, 
+             format = 'html')
+```
+
+```         
+```

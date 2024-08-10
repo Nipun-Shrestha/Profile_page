@@ -5,12 +5,10 @@ project:
 website:
     navbar:
       left:
-      - href: index.qmd
+      - href: index1.qmd
         text: Home
       - href: about.qmd
         text: About
-      - href: Publications.qmd
-        text: Publications
       - href: Posts.qmd
         text: Blog
       - text: Tutorial
