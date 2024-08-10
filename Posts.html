@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GBD</title>
+<title>Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -39,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,26 +70,82 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<meta property="og:title" content="GBD">
-<meta property="og:description" content="">
-<meta name="twitter:title" content="GBD">
-<meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<meta name="google-site-verification" content="2yr2KIypX7Kvr8Hn1g1YojGA6ZipA8o6h-3daP-uNGQ">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Blog">
+<meta property="og:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="Blog">
+<meta name="twitter:image" content="https://github.com/Nipun-Shrestha/Profile_page/blob/main/thumbnail.png">
+<meta name="twitter:creator" content="@nipun_shrestha">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Nipun</span>
-    </a>
-  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -93,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="./index1.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -101,24 +161,31 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Posts.html"> 
+    <a class="nav-link active" href="./Posts.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorial" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tutorial</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial">    
+        <li>
+    <a class="dropdown-item" href="./MetaR.html">
+ <span class="dropdown-text"><i class="fa-solid fa-tree" aria-label="tree"></i> Meta-analysis in R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./Datavis.html">
+ <span class="dropdown-text"><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Data visualisation</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-in-touch" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">get in touch!</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-paper-plane--get-in-touch" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-paper-plane" aria-label="paper-plane"></i> get in touch!</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-get-in-touch">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-paper-plane--get-in-touch">    
         <li>
     <a class="dropdown-item" href="https://twitter.com/nipun_shrestha"><i class="bi bi-twitter" role="img">
 </i> 
@@ -140,96 +207,137 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
     <a href="https://github.com/Nipun-Shrestha" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Blog</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="-Booklet">-Booklet <span class="quarto-category-count">(1)</span></div><div class="category" data-category="-Conference Slides">-Conference Slides <span class="quarto-category-count">(1)</span></div><div class="category" data-category="-Conference photographs">-Conference photographs <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">GBD</h1>
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="-Conference Slides" data-listing-file-modified-sort="1718769661793" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
+<div class="thumbnail">
+<p><a href="./Posts/blog1.html" class="no-external"></a></p><a href="./Posts/blog1.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:Posts/blog1.html -->
+</a><p><a href="./Posts/blog1.html" class="no-external"></a></p>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>```{shinylive-r, echo=FALSE} #| context: server # Define the server logic</p>
-<pre><code>  # Define the UI
-  ui &lt;- fluidPage (
-    titlePanel("Interactive GBD Plot with gganimate"),
-    
-    sidebarLayout(
-      sidebarPanel(
-        selectInput("measure", label = "Outcome", choices = c("Prevalence", "Deaths", "DALYs (Disability-Adjusted Life Years)"), selected = "Prevalence"),
-        selectInput("sex", label = "Sex", choices =c("Female", "Male")),
-        actionButton("generatePlot", "Generate Plot")
-      ),
-      
-      mainPanel(
-        imageOutput("animatedPlot")
-      )
-    )
-  )
-
-  # Define the server logic
-  server &lt;- function(input, output) {
-    
-    output$animatedPlot &lt;- renderImage({
-      input$generatePlot  # This makes the plot reactive to button press
-      
-      isolate({
-        filtered_data &lt;- dat1 %&gt;%
-          dplyr::filter(measure == input$measure &amp; sex == input$sex)
-        
-        p &lt;- ggplot(
-          filtered_data,
-          aes(x = income, y = val, size = Population, colour = Country)
-        ) +
-          geom_point(show.legend = TRUE, alpha = 1) +
-          scale_color_viridis_d() +
-          scale_size(range = c(2, 12)) +
-          scale_x_log10() +
-          labs(x = "Income per person (GDP/capita PPPS inflation-adjusted)", y = "Age-standardized DALYs rate per 100,000") +
-          theme_minimal() +
-          transition_time(year) +
-          ease_aes('linear')
-        
-        anim &lt;- animate(p, nframes = 200, fps = 10, width = 800, height = 600, renderer = gifski_renderer())
-        outfile &lt;- tempfile(fileext = '.gif')
-        anim_save(outfile, animation = anim)
-        
-        list(src = outfile, contentType = 'image/gif', width = 800, height = 600)
-      })
-    }, deleteFile = TRUE)
-  }
-
-  # Run the application 
-  shinyApp(ui = ui, server = server)</code></pre>
-<p>```</p>
-
-
-
-</main> <!-- /main -->
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./Posts/blog1.html" class="no-external">ESMO conference</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./Posts/blog1.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('-Conference Slides'); return false;">
+-Conference Slides
+</div>
+</div>
+<div class="listing-description">
+<a href="./Posts/blog1.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:Posts/blog1.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./Posts/blog1.html" class="no-external"></a></p><a href="./Posts/blog1.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="-Conference photographs" data-listing-file-modified-sort="1718769661793" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./Posts/blog2.html" class="no-external"></a></p><a href="./Posts/blog2.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:Posts/blog2.html -->
+</a><p><a href="./Posts/blog2.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./Posts/blog2.html" class="no-external">Cochrane Colloquium London</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./Posts/blog2.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('-Conference photographs'); return false;">
+-Conference photographs
+</div>
+</div>
+<div class="listing-description">
+<a href="./Posts/blog2.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:Posts/blog2.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./Posts/blog2.html" class="no-external"></a></p><a href="./Posts/blog2.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="-Booklet" data-listing-file-modified-sort="1720743491461" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
+<div class="thumbnail">
+<p><a href="./Posts/blog3.html" class="no-external"></a></p><a href="./Posts/blog3.html" class="no-external">
+<p><img src="./Posts/stand.png" class="thumbnail-image"></p>
+</a><p><a href="./Posts/blog3.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./Posts/blog3.html" class="no-external">Booklet</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./Posts/blog3.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('-Booklet'); return false;">
+-Booklet
+</div>
+</div>
+<div class="listing-description">
+<a href="./Posts/blog3.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:Posts/blog3.html --></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./Posts/blog3.html" class="no-external"></a></p><a href="./Posts/blog3.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -311,7 +419,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/Nipun-Shrestha\.github\.io\/Profile_page\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
