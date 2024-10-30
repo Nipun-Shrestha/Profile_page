@@ -235,3 +235,74 @@ text(-16, -1, pos=4, cex=0.8, bquote(paste("Test for Subgroup Differences: ",
      ", p = ", .(formatC(res$QMp, digits=2, format="f")))))
 
 ```
+
+# Network Meta-analysis in R
+
+we use the TherapyFormats data. This data set is modeled after a real network meta-analysis assessing the effectiveness of different delivery formats of cognitive behavioral therapy for depression (P. Cuijpers, Noma, et al. 2019).
+
+::: panel-tabset
+#### Loading Packages
+
+```{r libr, warning = FALSE, message = FALSE}
+install.packages ("netmeta")
+library (netmeta)
+if (!require("remotes")) {
+  install.packages("remotes")
+}
+remotes::install_github("MathiasHarrer/dmetar")
+```
+
+#### Loading Data
+
+```{r netdata, warning = FALSE, message = FALSE}
+library(dmetar)
+data(TherapyFormats)
+
+```
+:::
+
+## Creating netwotrk meta analysis graph
+
+```{r netgraph}
+net <- netmeta (TE, seTE, treat1, treat2, author, data = TherapyFormats, sm= "SMD", fixed= TRUE, random= FALSE, reference ="cau")
+# Replace with full name (see treat1.long and treat2.long)
+long.labels <- c("Care As Usual", "Group", 
+                 "Guided Self-Help", 
+                 "Individual", "Telephone", 
+                 "Unguided Self-Help", 
+                 "Waitlist")
+
+netgraph (net, plastic =FALSE, points=TRUE, col= "darkblue", thickness = "number.of.studies", lwd= 2.7, cex.points = 4, offset=0.05, scale = 1.1, col.points = "red", seq = 1, labels = long.labels)
+```
+
+## Ordered network effects forest plot (Pscore)
+
+```{r Pscore}
+forest(net, reference.group = "cau", sortvar = -Pscore, xlim = c(-1.3, 0.5),
+       smlab = paste("Therapy Formats vs. Care As Usual \n",
+                     "(Depressive Symptoms)"), rightcols = c("effect", "ci", "Pscore"), xlab ="Risk ratio", direct= "TRURE", indirect ="FALSE", labels = long.labels, drop.reference.group = TRUE)
+
+```
+
+## Split the evidence into direct/indirect
+
+```{r fig.height= 18, fig.width=17, dpi=400}
+netsplit <- netsplit(net)
+
+#plot indirect, direct and network evidence
+forest(netsplit, fontsize=6, spacing=0.9, addrow.subgroups= FALSE, show ="all", labels = long.labels,)
+```
+
+## Publication bias
+
+```{r bias}
+funnel(net, 
+       order = c("wlc", "cau", "ind", "grp", # from old to new
+                 "tel", "ush", "gsh"), 
+       pch = c(1:4, 5, 6, 8, 15:19, 21:24), 
+       col = c("blue", "red", "purple", "forestgreen", "grey", 
+               "green", "black", "brown", "orange", "pink", 
+               "khaki", "plum", "aquamarine", "sandybrown", 
+               "coral", "gold4"), 
+       linreg = TRUE)
+```

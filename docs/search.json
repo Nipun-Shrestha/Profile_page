@@ -215,5 +215,33 @@
     "title": "",
     "section": "",
     "text": "Back to top"
+  },
+  {
+    "objectID": "MetaR.html#creating-netwotrk-meta-analysis-graph",
+    "href": "MetaR.html#creating-netwotrk-meta-analysis-graph",
+    "title": "Meta-analysis in R",
+    "section": "Creating netwotrk meta analysis graph",
+    "text": "Creating netwotrk meta analysis graph\n\nCodenet &lt;- netmeta (TE, seTE, treat1, treat2, author, data = TherapyFormats, sm= \"SMD\", fixed= TRUE, random= FALSE, reference =\"cau\")\n# Replace with full name (see treat1.long and treat2.long)\nlong.labels &lt;- c(\"Care As Usual\", \"Group\", \n                 \"Guided Self-Help\", \n                 \"Individual\", \"Telephone\", \n                 \"Unguided Self-Help\", \n                 \"Waitlist\")\n\nnetgraph (net, plastic =FALSE, points=TRUE, col= \"darkblue\", thickness = \"number.of.studies\", lwd= 2.7, cex.points = 4, offset=0.05, scale = 1.1, col.points = \"red\", seq = 1, labels = long.labels)"
+  },
+  {
+    "objectID": "MetaR.html#ordered-network-effects-forest-plot-pscore",
+    "href": "MetaR.html#ordered-network-effects-forest-plot-pscore",
+    "title": "Meta-analysis in R",
+    "section": "Ordered network effects forest plot (Pscore)",
+    "text": "Ordered network effects forest plot (Pscore)\n\nCodeforest(net, reference.group = \"cau\", sortvar = -Pscore, xlim = c(-1.3, 0.5),\n       smlab = paste(\"Therapy Formats vs. Care As Usual \\n\",\n                     \"(Depressive Symptoms)\"), rightcols = c(\"effect\", \"ci\", \"Pscore\"), xlab =\"Risk ratio\", direct= \"TRURE\", indirect =\"FALSE\", labels = long.labels, drop.reference.group = TRUE)"
+  },
+  {
+    "objectID": "MetaR.html#split-the-evidence-into-directindirect",
+    "href": "MetaR.html#split-the-evidence-into-directindirect",
+    "title": "Meta-analysis in R",
+    "section": "Split the evidence into direct/indirect",
+    "text": "Split the evidence into direct/indirect\n\nCodenetsplit &lt;- netsplit(net)\n\n#plot indirect, direct and network evidence\nforest(netsplit, fontsize=6, spacing=0.9, addrow.subgroups= FALSE, show =\"all\", labels = long.labels,)"
+  },
+  {
+    "objectID": "MetaR.html#publication-bias",
+    "href": "MetaR.html#publication-bias",
+    "title": "Meta-analysis in R",
+    "section": "Publication bias",
+    "text": "Publication bias\n\nCodefunnel(net, \n       order = c(\"wlc\", \"cau\", \"ind\", \"grp\", # from old to new\n                 \"tel\", \"ush\", \"gsh\"), \n       pch = c(1:4, 5, 6, 8, 15:19, 21:24), \n       col = c(\"blue\", \"red\", \"purple\", \"forestgreen\", \"grey\", \n               \"green\", \"black\", \"brown\", \"orange\", \"pink\", \n               \"khaki\", \"plum\", \"aquamarine\", \"sandybrown\", \n               \"coral\", \"gold4\"), \n       linreg = TRUE)"
   }
 ]
