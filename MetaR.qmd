@@ -238,7 +238,7 @@ text(-16, -1, pos=4, cex=0.8, bquote(paste("Test for Subgroup Differences: ",
 
 # Network Meta-analysis in R
 
-we use the TherapyFormats data. This data set is modeled after a real network meta-analysis assessing the effectiveness of different delivery formats of cognitive behavioral therapy for depression (P. Cuijpers, Noma, et al. 2019).
+we use the TherapyFormats data. This data set is modeled after a real network meta-analysis assessing the effectiveness of different delivery formats of cognitive behavioral therapy for depression [@Cuijpers2019].
 
 ::: panel-tabset
 #### Loading Packages
@@ -286,7 +286,7 @@ forest(net, reference.group = "cau", sortvar = -Pscore, xlim = c(-1.3, 0.5),
 
 ## Split the evidence into direct/indirect
 
-```{r fig.height= 18, fig.width=17, dpi=400}
+```{r fig.height= 18, fig.width=15, dpi=400}
 netsplit <- netsplit(net)
 
 #plot indirect, direct and network evidence
